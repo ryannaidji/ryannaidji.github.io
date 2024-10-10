@@ -1,0 +1,224 @@
+/* ==========================
+   GLOBAL STYLES
+========================== */
+
+/* Style général du document */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #ffffff; /* Fond blanc */
+    color: #000000; /* Texte en noir */
+    margin: 0;
+    padding: 0;
+}
+
+/* ==========================
+   NAVIGATION (Fixed + Transparence)
+========================== */
+
+/* Barre de navigation fixe (elle reste visible en haut lors du défilement) */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Fond blanc avec transparence */
+    backdrop-filter: blur(10px);
+    padding: 10px 0;
+    text-align: center;
+    z-index: 999; /* Assure que la barre reste au-dessus du contenu */
+}
+
+/* Liste de navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Liens du menu */
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 2px; /* Liens en gras */
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #32cd32; /* Vert lime au hover */
+}
+
+nav a.active {
+    color: #32cd32;
+    font-weight: bold; /* Liens en gras */
+}
+
+/* ==========================
+   MARGINS AND SPACING ADJUSTMENTS
+========================== */
+
+/* Ajout de marge pour compenser la barre de navigation fixe */
+section.about-me {
+    padding: 40px;
+    max-width: 1000px;
+    margin: 60px auto 0 auto; /* Ajustement de la marge supérieure pour compenser la navigation fixe */
+}
+
+/* ==========================
+   PROGRESS BAR (Barre de progression)
+========================== */
+
+.progress-container {
+    position: fixed;
+    top: 38px; /* Ajuster en fonction de la hauteur de la barre de navigation */
+    width: 100%;
+    height: 1.5px;
+    background-color: #333333;
+    z-index: 998; /* Sous la barre de navigation */
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #32cd32; /* Couleur verte pour la progression */
+    width: 0%;
+    transition: width 0.1s ease-out;
+}
+
+/* ==========================
+   SECTION "ABOUT ME"
+========================== */
+
+/* Conteneur principal de la section "About Me" */
+.about-content {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+/* Bloc de texte */
+.text-section {
+    flex: 1;
+    max-width: 48%; /* Alignement avec la largeur du texte */
+    padding-right: 5px;
+    box-sizing: border-box; /* Inclut le padding dans la largeur */
+}
+
+/* Bloc d'image */
+.image-section {
+    flex: 0 0 250px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Style de l'image */
+.profile-picture {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(50, 205, 50, 0.5), 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Localisation sous la photo */
+.location {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #000;
+}
+
+/* ==========================
+   SECTION "HIGHLIGHT"
+========================== */
+
+/* Conteneur de la section "highlight" */
+.highlight-section {
+    max-width: 1000px;
+    margin: 10px 300px 0 300px;
+    padding: 0px 20px; /* Réduction du padding */
+    text-align: justify;
+}
+
+/* Style des paragraphes dans la section "highlight" */
+.highlight-section p {
+    margin-bottom: 10px;
+    line-height: 1.6; /* Ajustement de l'espacement entre les lignes */
+}
+
+/* ==========================
+   TITRES ET TEXTE
+========================== */
+
+/* Titre principal */
+h1 {
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+h1 strong {
+    font-weight: bold; /* "Ryan" en gras */
+}
+
+/* Sous-titre */
+h2.green-text {
+    color: #32cd32; /* Vert lime */
+    margin-top: 0;
+    font-weight: normal;
+    font-size: 1.5em;
+}
+
+p {
+    color: #000000;
+    line-height: 1.6; /* Espacement entre les lignes */
+}
+
+.green-text {
+    color: #32cd32; /* Vert lime */
+    text-decoration: none;
+}
+
+/* ==========================
+   SOCIAL ICONS
+========================== */
+
+/* Conteneur des icônes sociales */
+.social-icons {
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* Icônes sociales */
+.social-icons .icon {
+    margin: 0 15px;
+    color: #000000;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 50px;
+}
+
+/* Effet au survol */
+.social-icons .icon i {
+    transition: transform 0.3s ease;
+}
+
+.social-icons .icon:hover i {
+    transform: scale(1.3);
+}
+
+.social-icons .icon:hover {
+    color: #32cd32;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+/* Pied de page */
+footer {
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    padding: 20px 0 35px 0;
+    border-top: 0.3px solid #333333;
+    width: 100%;
+    font-size: 0.7em;
+}

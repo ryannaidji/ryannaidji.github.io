@@ -1,0 +1,27 @@
+/* ==========================
+   SECTION "COMING SOON"
+========================== */
+
+.coming-soon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Occupe la majeure partie de la page */
+    text-align: center;
+    padding: 20px;
+}
+
+.coming-soon h1 {
+    font-family: 'Courier New', Courier, monospace; /* Même police que le reste du site */
+    font-size: 3em; /* Taille du texte plus grande pour l'en-tête */
+    color: #32cd32; /* Vert lime pour se démarquer */
+    margin-bottom: 20px;
+}
+
+.coming-soon p {
+    font-family: 'Courier New', Courier, monospace; /* Même police que le reste du site */
+    font-size: 1.2em; /* Taille légèrement plus grande que le texte normal */
+    color: #000000; /* Texte en noir */
+    margin-bottom: 40px;
+}
