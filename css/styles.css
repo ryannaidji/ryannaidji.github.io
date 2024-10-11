@@ -95,6 +95,7 @@ section.about-me {
 .about-content {
     display: flex;
     justify-content: center;
+    align-items: center; /* Alignement vertical des éléments */
     gap: 50px;
 }
 
@@ -110,7 +111,7 @@ section.about-me {
 .image-section {
     flex: 0 0 250px;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 0; /* Supprimer la marge supérieure pour un meilleur alignement */
 }
 
 /* Style de l'image */
@@ -137,6 +138,12 @@ section.about-me {
     margin: 10px 300px 0 300px;
     padding: 0px 20px; /* Réduction du padding */
     text-align: justify;
+}
+
+@media (max-width: 768px) {
+    .highlight-section {
+        margin: 10px 20px; /* Réduction de la marge pour les petits écrans */
+    }
 }
 
 /* Style des paragraphes dans la section "highlight" */
