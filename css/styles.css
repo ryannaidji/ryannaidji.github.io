@@ -140,11 +140,6 @@ section.about-me {
     text-align: justify;
 }
 
-@media (max-width: 768px) {
-    .highlight-section {
-        margin: 10px 20px; /* Réduction de la marge pour les petits écrans */
-    }
-}
 
 /* Style des paragraphes dans la section "highlight" */
 .highlight-section p {
@@ -228,4 +223,54 @@ footer {
     border-top: 0.3px solid #333333;
     width: 100%;
     font-size: 0.7em;
+}
+
+@media (max-width: 768px) {
+    /* Ajustement de la barre de navigation */
+    nav ul li {
+        display: block;
+        margin: 10px 0; /* Espacement entre les éléments du menu */
+    }
+
+    /* Ajustement de la section "About Me" pour une disposition verticale */
+    .about-content {
+        flex-direction: column; /* Dispose les éléments en colonne */
+        gap: 20px; /* Moins d'espace entre les éléments sur mobile */
+        padding: 20px;
+    }
+
+    /* Alignement du texte en plein écran */
+    .text-section {
+        max-width: 100%; /* Le texte occupe toute la largeur */
+        padding-right: 0;
+    }
+
+    /* Image de profil */
+    .image-section {
+        flex: 0 0 auto; /* Désactive la taille fixe sur mobile */
+        width: 80%; /* Réduit la taille de l'image pour l'adapter à l'écran */
+        margin: 0 auto; /* Centre l'image */
+    }
+
+    /* Section "highlight" */
+    .highlight-section {
+        margin: 10px 20px;
+        padding: 10px;
+    }
+
+    /* Icônes sociales */
+    .social-icons {
+        font-size: 40px; /* Réduit la taille des icônes sur mobile */
+    }
+
+    /* Footer */
+    footer {
+        padding: 10px 0 20px 0;
+        font-size: 0.9em; /* Augmentation légère de la taille pour mobile */
+    }
+
+    /* Ajustement de la barre de progression */
+    .progress-container {
+        top: 48px; /* Ajuster la position de la barre de progression */
+    }
 }
