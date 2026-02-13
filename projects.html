@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RYAN_N | Projects</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="img/waving.png" />
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#E11D48",
+            accent: "#E11D48",
+            "background-light": "#E5E7EB"
+          },
+          borderRadius: { none: "0", DEFAULT: "0" }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-[#E5E7EB] text-black">
+  <div class="noise-bg"></div>
+
+  <div class="scroll-line hidden lg:block">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-3 h-3 border border-black bg-primary"></div>
+    <div class="absolute top-2/4 left-1/2 -translate-x-1/2 w-3 h-3 border border-black bg-white"></div>
+    <div class="absolute top-3/4 left-1/2 -translate-x-1/2 w-3 h-3 border border-black bg-black"></div>
+  </div>
+
+  <!-- SYS BAR -->
+  <div class="bg-black text-white text-xs py-3 px-4 text-center font-mono-tech font-bold uppercase tracking-widest border-b-4 border-black relative z-50">
+    <span class="bg-primary px-2 py-0.5 mr-2">PORTFOLIO_NODE</span>
+    Open to internships / junior ML roles / AI projects.
+    <a href="contact.html" class="underline ml-2 hover:bg-primary transition-colors px-1">Initiate contact &rarr;</a>
+  </div>
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 bg-[#E5E7EB]/90 backdrop-blur-sm border-b-4 border-black">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-12">
+        <a href="index.html" class="flex items-center gap-2 font-black text-2xl uppercase italic tracking-tighter">
+          <span class="material-icons-outlined text-4xl text-primary">terminal</span>
+          <span>RYAN_N</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="about.html" class="nav-link text-sm font-bold uppercase tracking-tight hover:text-primary underline decoration-2 underline-offset-4">About</a>
+          <a href="skills.html" class="nav-link text-sm font-bold uppercase tracking-tight hover:text-primary underline decoration-2 underline-offset-4">Skills</a>
+          <a href="projects.html" class="nav-link text-sm font-bold uppercase tracking-tight hover:text-primary underline decoration-2 underline-offset-4">Projects</a>
+          <a href="articles.html" class="nav-link text-sm font-bold uppercase tracking-tight hover:text-primary underline decoration-2 underline-offset-4">Articles</a>
+          <a href="publications.html" class="nav-link text-sm font-bold uppercase tracking-tight hover:text-primary underline decoration-2 underline-offset-4">Publications</a>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="contact.html" class="btn-gradient-red text-white text-sm font-black uppercase tracking-widest px-6 py-3 brutalist-border-sm brutalist-shadow-sm hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all hidden sm:inline-block">
+          Hire Me
+        </a>
+        <button id="hamburger-btn" class="hamburger-btn md:hidden" aria-label="Toggle menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="mobile-menu bg-white md:hidden">
+      <div class="px-4 py-4 space-y-3 border-b-2 border-black">
+        <a href="about.html" class="block text-sm font-bold uppercase tracking-tight hover:text-primary">About</a>
+        <a href="skills.html" class="block text-sm font-bold uppercase tracking-tight hover:text-primary">Skills</a>
+        <a href="projects.html" class="block text-sm font-bold uppercase tracking-tight hover:text-primary">Projects</a>
+        <a href="articles.html" class="block text-sm font-bold uppercase tracking-tight hover:text-primary">Articles</a>
+        <a href="publications.html" class="block text-sm font-bold uppercase tracking-tight hover:text-primary">Publications</a>
+        <a href="contact.html" class="block text-sm font-bold uppercase tracking-tight text-primary">Contact</a>
+      </div>
+    </div>
+    <div class="h-[6px] bg-white border-t-2 border-black">
+      <div id="progress-bar" class="h-full bg-primary w-0 transition-all duration-150"></div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header bg-[#E5E7EB]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="inline-block brutalist-border bg-white px-4 py-2 mb-6 font-mono-tech font-bold uppercase text-xs tracking-tighter brutalist-shadow-sm relative">
+        <span class="terminal-dot"></span> Project Registry Active
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black tracking-tighter uppercase italic">Featured <span class="text-primary">Projects</span></h1>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="py-20 bg-white border-b-4 border-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-14 flex items-end justify-between">
+        <div>
+          <h2 class="text-primary font-black uppercase text-xl mb-3 italic font-mono-tech">01 // SHOWCASE</h2>
+          <h3 class="text-5xl md:text-6xl font-black uppercase tracking-tighter">Project Archive</h3>
+        </div>
+        <a href="publications.html" class="hidden md:block font-mono-tech text-xs uppercase underline hover:text-primary">View publications &rarr;</a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <article class="brutalist-border bg-[#E5E7EB] brutalist-shadow-sm p-6 relative hover-brutalist transition-all">
+          <div class="sticker-badge">ML_CASE</div>
+          <div class="mb-5 flex items-center justify-between">
+            <h4 class="text-2xl font-black uppercase italic">Customer Churn Predictor</h4>
+            <span class="font-mono-tech text-[10px] bg-black text-white px-2 py-1">2024</span>
+          </div>
+          <p class="font-bold uppercase text-sm leading-relaxed mb-5">
+            Supervised learning pipeline to estimate churn probability and support retention strategy.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">Sklearn</span>
+          </div>
+          <a href="#" class="font-mono-tech text-xs uppercase font-bold text-primary underline">View Project</a>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="brutalist-border bg-[#E5E7EB] brutalist-shadow-sm p-6 relative hover-brutalist transition-all">
+          <div class="sticker-badge !bg-primary !text-white">DL_CASE</div>
+          <div class="mb-5 flex items-center justify-between">
+            <h4 class="text-2xl font-black uppercase italic">Image Classification Lab</h4>
+            <span class="font-mono-tech text-[10px] bg-black text-white px-2 py-1">2024</span>
+          </div>
+          <p class="font-bold uppercase text-sm leading-relaxed mb-5">
+            CNN experiments for visual recognition with training/evaluation analysis.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">CV</span>
+          </div>
+          <a href="#" class="font-mono-tech text-xs uppercase font-bold text-primary underline">View Project</a>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="brutalist-border bg-[#E5E7EB] brutalist-shadow-sm p-6 relative hover-brutalist transition-all">
+          <div class="sticker-badge">DATA_CASE</div>
+          <div class="mb-5 flex items-center justify-between">
+            <h4 class="text-2xl font-black uppercase italic">AI Insights Dashboard</h4>
+            <span class="font-mono-tech text-[10px] bg-black text-white px-2 py-1">2025</span>
+          </div>
+          <p class="font-bold uppercase text-sm leading-relaxed mb-5">
+            Data storytelling dashboard highlighting model KPIs and experiment tracking.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Visualization</span>
+          </div>
+          <a href="#" class="font-mono-tech text-xs uppercase font-bold text-primary underline">View Project</a>
+        </article>
+      </div>
+
+      <!-- MORE PROJECTS -->
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Card 4 -->
+        <article class="brutalist-border bg-[#E5E7EB] brutalist-shadow-sm p-6 relative hover-brutalist transition-all">
+          <div class="sticker-badge">NLP_CASE</div>
+          <div class="mb-5 flex items-center justify-between">
+            <h4 class="text-2xl font-black uppercase italic">Sentiment Analysis Engine</h4>
+            <span class="font-mono-tech text-[10px] bg-black text-white px-2 py-1">2025</span>
+          </div>
+          <p class="font-bold uppercase text-sm leading-relaxed mb-5">
+            NLP pipeline to classify customer reviews as positive, negative, or neutral using text preprocessing and ML models.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="chip">Python</span><span class="chip">NLTK</span><span class="chip">Sklearn</span>
+          </div>
+          <a href="#" class="font-mono-tech text-xs uppercase font-bold text-primary underline">View Project</a>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="brutalist-border bg-[#E5E7EB] brutalist-shadow-sm p-6 relative hover-brutalist transition-all">
+          <div class="sticker-badge !bg-primary !text-white">API_CASE</div>
+          <div class="mb-5 flex items-center justify-between">
+            <h4 class="text-2xl font-black uppercase italic">ML Model API</h4>
+            <span class="font-mono-tech text-[10px] bg-black text-white px-2 py-1">2025</span>
+          </div>
+          <p class="font-bold uppercase text-sm leading-relaxed mb-5">
+            RESTful API serving a trained ML model via FastAPI with input validation and prediction endpoints.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">Sklearn</span>
+          </div>
+          <a href="#" class="font-mono-tech text-xs uppercase font-bold text-primary underline">View Project</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-white pt-10 pb-10 relative overflow-hidden">
+    <div class="absolute top-0 right-0 p-8 font-mono-tech text-[110px] font-black opacity-[0.03] leading-none pointer-events-none select-none uppercase italic">
+      RYAN_NODE
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center gap-2 font-black text-2xl uppercase italic tracking-tighter">
+          <span class="material-icons-outlined text-3xl text-primary">terminal</span>
+          <span>RYAN_N</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="mailto:ryan.naidji@gmail.com" class="hover:text-primary transition-colors"><i class="fas fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/ryannaidji" target="_blank" class="hover:text-primary transition-colors"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/ryannaidji/" target="_blank" class="hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
+          <a href="https://discordapp.com/users/ryann_305" target="_blank" class="hover:text-primary transition-colors"><i class="fab fa-discord"></i></a>
+        </div>
+        <p class="font-mono-tech font-bold uppercase text-[10px] tracking-[0.25em] text-slate-500 text-center md:text-right">
+          &copy; 2025 Ryan N. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

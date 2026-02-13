@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RYAN_N | Articles</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="img/waving.png" />
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#E11D48",
+            accent: "#E11D48",
+            "background-light": "#E5E7EB"
+          },
+          borderRadius: { none: "0", DEFAULT: "0" }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-[#E5E7EB] text-black">
+  <div class="noise-bg"></div>
+
+  <div class="scroll-line hidden lg:block">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-3 h-3 border border-black bg-primary"></div>
+    <div class="absolute top-2/4 left-1/2 -translate-x-1/2 w-3 h-3 border border-black bg-white"></div>
+    <div class="absolute top-3/4 left-1/2 -translate-x-1/2 w-3 h-3 border border-black bg-black"></div>
+  </div>
+
+  <!-- SYS BAR -->
+  <div class="bg-black text-white text-xs py-3 px-4 text-center font-mono-tech font-bold uppercase tracking-widest border-b-4 border-black relative z-50">
+    <span class="bg-primary px-2 py-0.5 mr-2">PORTFOLIO_NODE</span>
+    Open to internships / junior ML roles / AI projects.
+    <a href="contact.html" class="underline ml-2 hover:bg-primary transition-colors px-1">Initiate contact &rarr;</a>
+  </div>
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 bg-[#E5E7EB]/90 backdrop-blur-sm border-b-4 border-black">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-12">
+        <a href="index.html" class="flex items-center gap-2 font-black text-2xl uppercase italic tracking-tighter">
+          <span class="material-icons-outlined text-4xl text-primary">terminal</span>
+          <span>RYAN_N</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="about.html" class="nav-link text-sm font-bold uppercase tracking-tight hover:text-primary underline decoration-2 underline-offset-4">About</a>
+          <a href="skills.html" class="nav-link text-sm font-bold uppercase tracking-tight hover:text-primary underline decoration-2 underline-offset-4">Skills</a>
+          <a href="projects.html" class="nav-link text-sm font-bold uppercase tracking-tight hover:text-primary underline decoration-2 underline-offset-4">Projects</a>
+          <a href="articles.html" class="nav-link text-sm font-bold uppercase tracking-tight hover:text-primary underline decoration-2 underline-offset-4">Articles</a>
+          <a href="publications.html" class="nav-link text-sm font-bold uppercase tracking-tight hover:text-primary underline decoration-2 underline-offset-4">Publications</a>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="contact.html" class="btn-gradient-red text-white text-sm font-black uppercase tracking-widest px-6 py-3 brutalist-border-sm brutalist-shadow-sm hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all hidden sm:inline-block">
+          Hire Me
+        </a>
+        <button id="hamburger-btn" class="hamburger-btn md:hidden" aria-label="Toggle menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="mobile-menu bg-white md:hidden">
+      <div class="px-4 py-4 space-y-3 border-b-2 border-black">
+        <a href="about.html" class="block text-sm font-bold uppercase tracking-tight hover:text-primary">About</a>
+        <a href="skills.html" class="block text-sm font-bold uppercase tracking-tight hover:text-primary">Skills</a>
+        <a href="projects.html" class="block text-sm font-bold uppercase tracking-tight hover:text-primary">Projects</a>
+        <a href="articles.html" class="block text-sm font-bold uppercase tracking-tight hover:text-primary">Articles</a>
+        <a href="publications.html" class="block text-sm font-bold uppercase tracking-tight hover:text-primary">Publications</a>
+        <a href="contact.html" class="block text-sm font-bold uppercase tracking-tight text-primary">Contact</a>
+      </div>
+    </div>
+    <div class="h-[6px] bg-white border-t-2 border-black">
+      <div id="progress-bar" class="h-full bg-primary w-0 transition-all duration-150"></div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header bg-[#E5E7EB]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="inline-block brutalist-border bg-white px-4 py-2 mb-6 font-mono-tech font-bold uppercase text-xs tracking-tighter brutalist-shadow-sm relative">
+        <span class="terminal-dot"></span> Knowledge Base Online
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black tracking-tighter uppercase italic">Articles & <span class="text-primary">Insights</span></h1>
+    </div>
+  </section>
+
+  <!-- ARTICLES -->
+  <section class="py-20 bg-white border-b-4 border-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-14">
+        <h2 class="text-primary font-black uppercase text-xl mb-3 italic font-mono-tech">// BLOG_FEED</h2>
+        <h3 class="text-5xl md:text-6xl font-black uppercase tracking-tighter">Latest Writings</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Article 1 -->
+        <article class="content-card relative">
+          <div class="sticker-badge">TUTORIAL</div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="font-mono-tech text-[10px] bg-black text-white px-2 py-1 uppercase">Jan 2025</span>
+            <span class="font-mono-tech text-[10px] uppercase opacity-60">8 min read</span>
+          </div>
+          <h4 class="text-2xl font-black uppercase italic mb-3">Getting Started with Scikit-Learn</h4>
+          <p class="font-bold uppercase text-sm leading-relaxed mb-5 text-slate-700">
+            A beginner-friendly walkthrough of the Scikit-Learn library. Covers data loading, train-test splitting, model training, and evaluation metrics with hands-on examples.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="chip">Python</span><span class="chip">Sklearn</span><span class="chip">Beginner</span>
+          </div>
+          <a href="#" class="font-mono-tech text-xs uppercase font-bold text-primary underline">Read Article &rarr;</a>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="content-card relative">
+          <div class="sticker-badge !bg-primary !text-white">DEEP DIVE</div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="font-mono-tech text-[10px] bg-black text-white px-2 py-1 uppercase">Feb 2025</span>
+            <span class="font-mono-tech text-[10px] uppercase opacity-60">12 min read</span>
+          </div>
+          <h4 class="text-2xl font-black uppercase italic mb-3">Understanding Convolutional Neural Networks</h4>
+          <p class="font-bold uppercase text-sm leading-relaxed mb-5 text-slate-700">
+            Breaking down how CNNs work from convolution operations to feature maps. Includes visual explanations and a simple implementation in TensorFlow/Keras.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="chip">TensorFlow</span><span class="chip">CNN</span><span class="chip">Deep Learning</span>
+          </div>
+          <a href="#" class="font-mono-tech text-xs uppercase font-bold text-primary underline">Read Article &rarr;</a>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="content-card relative">
+          <div class="sticker-badge">GUIDE</div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="font-mono-tech text-[10px] bg-black text-white px-2 py-1 uppercase">Mar 2025</span>
+            <span class="font-mono-tech text-[10px] uppercase opacity-60">6 min read</span>
+          </div>
+          <h4 class="text-2xl font-black uppercase italic mb-3">Data Preprocessing Best Practices</h4>
+          <p class="font-bold uppercase text-sm leading-relaxed mb-5 text-slate-700">
+            Essential techniques for cleaning, transforming, and preparing data before feeding it into ML models. Covers handling missing values, encoding, and scaling.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Data</span>
+          </div>
+          <a href="#" class="font-mono-tech text-xs uppercase font-bold text-primary underline">Read Article &rarr;</a>
+        </article>
+
+        <!-- Article 4 -->
+        <article class="content-card relative">
+          <div class="sticker-badge !bg-primary !text-white">PERSONAL</div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="font-mono-tech text-[10px] bg-black text-white px-2 py-1 uppercase">Apr 2025</span>
+            <span class="font-mono-tech text-[10px] uppercase opacity-60">5 min read</span>
+          </div>
+          <h4 class="text-2xl font-black uppercase italic mb-3">My Journey into Artificial Intelligence</h4>
+          <p class="font-bold uppercase text-sm leading-relaxed mb-5 text-slate-700">
+            A personal reflection on how I transitioned into AI, the challenges I faced, the resources that helped me, and advice for others starting out.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="chip">Career</span><span class="chip">AI</span><span class="chip">Story</span>
+          </div>
+          <a href="#" class="font-mono-tech text-xs uppercase font-bold text-primary underline">Read Article &rarr;</a>
+        </article>
+
+        <!-- Article 5 -->
+        <article class="content-card relative">
+          <div class="sticker-badge">TUTORIAL</div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="font-mono-tech text-[10px] bg-black text-white px-2 py-1 uppercase">May 2025</span>
+            <span class="font-mono-tech text-[10px] uppercase opacity-60">10 min read</span>
+          </div>
+          <h4 class="text-2xl font-black uppercase italic mb-3">Building Your First ML Pipeline</h4>
+          <p class="font-bold uppercase text-sm leading-relaxed mb-5 text-slate-700">
+            Step-by-step guide to building an end-to-end machine learning pipeline from data ingestion to model deployment using Python and Scikit-Learn.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="chip">Python</span><span class="chip">Pipeline</span><span class="chip">MLOps</span>
+          </div>
+          <a href="#" class="font-mono-tech text-xs uppercase font-bold text-primary underline">Read Article &rarr;</a>
+        </article>
+
+        <!-- Article 6 -->
+        <article class="content-card relative">
+          <div class="sticker-badge !bg-primary !text-white">DEEP DIVE</div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="font-mono-tech text-[10px] bg-black text-white px-2 py-1 uppercase">Jun 2025</span>
+            <span class="font-mono-tech text-[10px] uppercase opacity-60">9 min read</span>
+          </div>
+          <h4 class="text-2xl font-black uppercase italic mb-3">Hyperparameter Tuning Demystified</h4>
+          <p class="font-bold uppercase text-sm leading-relaxed mb-5 text-slate-700">
+            Understanding grid search, random search, and Bayesian optimization for finding the best model configurations. Practical examples included.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="chip">Sklearn</span><span class="chip">Optimization</span><span class="chip">ML</span>
+          </div>
+          <a href="#" class="font-mono-tech text-xs uppercase font-bold text-primary underline">Read Article &rarr;</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-white pt-10 pb-10 relative overflow-hidden">
+    <div class="absolute top-0 right-0 p-8 font-mono-tech text-[110px] font-black opacity-[0.03] leading-none pointer-events-none select-none uppercase italic">
+      RYAN_NODE
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center gap-2 font-black text-2xl uppercase italic tracking-tighter">
+          <span class="material-icons-outlined text-3xl text-primary">terminal</span>
+          <span>RYAN_N</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="mailto:ryan.naidji@gmail.com" class="hover:text-primary transition-colors"><i class="fas fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/ryannaidji" target="_blank" class="hover:text-primary transition-colors"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/ryannaidji/" target="_blank" class="hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
+          <a href="https://discordapp.com/users/ryann_305" target="_blank" class="hover:text-primary transition-colors"><i class="fab fa-discord"></i></a>
+        </div>
+        <p class="font-mono-tech font-bold uppercase text-[10px] tracking-[0.25em] text-slate-500 text-center md:text-right">
+          &copy; 2025 Ryan N. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

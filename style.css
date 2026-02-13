@@ -1,0 +1,255 @@
+/* ========================================
+   RYAN_N Portfolio — Brutalist Theme
+   ======================================== */
+
+/* --- CSS Variables --- */
+:root {
+  --accent: #E11D48;
+  --accent-dark: #9F1239;
+  --black: #000000;
+  --white: #ffffff;
+  --silver-grey: #E5E7EB;
+  --dark-grey: #1F2937;
+}
+
+/* --- Base --- */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--silver-grey);
+  color: var(--black);
+}
+
+.font-mono-tech {
+  font-family: 'Space Mono', monospace;
+}
+
+/* --- Noise Overlay --- */
+.noise-bg {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+
+/* --- Sticker Badge --- */
+.sticker-badge {
+  position: absolute;
+  top: -0.75rem;
+  right: -0.75rem;
+  background-color: var(--white);
+  border: 2px solid var(--black);
+  padding: 0.125rem 0.5rem;
+  font-size: 10px;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+  z-index: 20;
+}
+
+/* --- Tech Link --- */
+.tech-link {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  padding-left: 0.125rem;
+  padding-right: 0.125rem;
+  transition: all 0.15s;
+}
+.tech-link:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+/* --- Terminal Dot --- */
+.terminal-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--accent);
+  border: 1px solid var(--black);
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* --- Chip --- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 11px;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  border: 2px solid var(--black);
+  background-color: var(--white);
+}
+
+/* --- Brutalist Primitives --- */
+.brutalist-border {
+  border: 4px solid var(--black);
+}
+.brutalist-border-sm {
+  border: 2px solid var(--black);
+}
+.brutalist-shadow {
+  box-shadow: 8px 8px 0 0 var(--black);
+}
+.brutalist-shadow-sm {
+  box-shadow: 4px 4px 0 0 var(--black);
+}
+
+/* --- Buttons --- */
+.btn-gradient-red {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+}
+
+/* --- Hover Effects --- */
+.hover-brutalist:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 10px 10px 0 0 var(--black);
+}
+
+/* --- Scroll Line --- */
+.scroll-line {
+  position: fixed;
+  left: 2rem;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(0, 0, 0, 0.12);
+  z-index: 40;
+}
+
+/* --- Skill Bars --- */
+.skill-track {
+  height: 10px;
+  border: 2px solid black;
+  background: #d1d5db;
+  position: relative;
+}
+.skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+}
+
+/* --- Navigation Active State --- */
+.nav-link {
+  position: relative;
+}
+.nav-link.active {
+  color: var(--accent);
+}
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent);
+}
+
+/* --- Mobile Hamburger --- */
+.hamburger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  border: 2px solid var(--black);
+  background: var(--white);
+  padding: 6px;
+  transition: all 0.2s;
+}
+.hamburger-btn:hover {
+  background: var(--accent);
+}
+.hamburger-btn:hover .hamburger-line {
+  background: var(--white);
+}
+.hamburger-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--black);
+  transition: all 0.3s;
+}
+
+/* Hamburger open state */
+.hamburger-btn.active .hamburger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger-btn.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-btn.active .hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Menu Panel */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  border-top: 0;
+}
+.mobile-menu.open {
+  max-height: 400px;
+  border-top: 2px solid var(--black);
+}
+
+/* --- Page Header Banner --- */
+.page-header {
+  padding: 4rem 0 3rem;
+  border-bottom: 4px solid var(--black);
+}
+
+/* --- Article / Publication Cards --- */
+.content-card {
+  border: 4px solid var(--black);
+  background: var(--white);
+  padding: 1.5rem;
+  position: relative;
+  transition: all 0.2s;
+}
+.content-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 10px 10px 0 0 var(--black);
+}
+
+/* --- Contact Form --- */
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--black);
+  background: var(--white);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+.form-input:focus {
+  outline: none;
+  box-shadow: 4px 4px 0 0 var(--accent);
+  border-color: var(--accent);
+}
+.form-input::placeholder {
+  color: #9CA3AF;
+  text-transform: uppercase;
+}
+textarea.form-input {
+  resize: vertical;
+  min-height: 120px;
+}

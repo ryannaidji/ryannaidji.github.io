@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RYAN_N | Publications</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="img/waving.png" />
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#E11D48",
+            accent: "#E11D48",
+            "background-light": "#E5E7EB"
+          },
+          borderRadius: { none: "0", DEFAULT: "0" }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-[#E5E7EB] text-black">
+  <div class="noise-bg"></div>
+
+  <div class="scroll-line hidden lg:block">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-3 h-3 border border-black bg-primary"></div>
+    <div class="absolute top-2/4 left-1/2 -translate-x-1/2 w-3 h-3 border border-black bg-white"></div>
+    <div class="absolute top-3/4 left-1/2 -translate-x-1/2 w-3 h-3 border border-black bg-black"></div>
+  </div>
+
+  <!-- SYS BAR -->
+  <div class="bg-black text-white text-xs py-3 px-4 text-center font-mono-tech font-bold uppercase tracking-widest border-b-4 border-black relative z-50">
+    <span class="bg-primary px-2 py-0.5 mr-2">PORTFOLIO_NODE</span>
+    Open to internships / junior ML roles / AI projects.
+    <a href="contact.html" class="underline ml-2 hover:bg-primary transition-colors px-1">Initiate contact &rarr;</a>
+  </div>
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 bg-[#E5E7EB]/90 backdrop-blur-sm border-b-4 border-black">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-12">
+        <a href="index.html" class="flex items-center gap-2 font-black text-2xl uppercase italic tracking-tighter">
+          <span class="material-icons-outlined text-4xl text-primary">terminal</span>
+          <span>RYAN_N</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="about.html" class="nav-link text-sm font-bold uppercase tracking-tight hover:text-primary underline decoration-2 underline-offset-4">About</a>
+          <a href="skills.html" class="nav-link text-sm font-bold uppercase tracking-tight hover:text-primary underline decoration-2 underline-offset-4">Skills</a>
+          <a href="projects.html" class="nav-link text-sm font-bold uppercase tracking-tight hover:text-primary underline decoration-2 underline-offset-4">Projects</a>
+          <a href="articles.html" class="nav-link text-sm font-bold uppercase tracking-tight hover:text-primary underline decoration-2 underline-offset-4">Articles</a>
+          <a href="publications.html" class="nav-link text-sm font-bold uppercase tracking-tight hover:text-primary underline decoration-2 underline-offset-4">Publications</a>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="contact.html" class="btn-gradient-red text-white text-sm font-black uppercase tracking-widest px-6 py-3 brutalist-border-sm brutalist-shadow-sm hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all hidden sm:inline-block">
+          Hire Me
+        </a>
+        <button id="hamburger-btn" class="hamburger-btn md:hidden" aria-label="Toggle menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="mobile-menu bg-white md:hidden">
+      <div class="px-4 py-4 space-y-3 border-b-2 border-black">
+        <a href="about.html" class="block text-sm font-bold uppercase tracking-tight hover:text-primary">About</a>
+        <a href="skills.html" class="block text-sm font-bold uppercase tracking-tight hover:text-primary">Skills</a>
+        <a href="projects.html" class="block text-sm font-bold uppercase tracking-tight hover:text-primary">Projects</a>
+        <a href="articles.html" class="block text-sm font-bold uppercase tracking-tight hover:text-primary">Articles</a>
+        <a href="publications.html" class="block text-sm font-bold uppercase tracking-tight hover:text-primary">Publications</a>
+        <a href="contact.html" class="block text-sm font-bold uppercase tracking-tight text-primary">Contact</a>
+      </div>
+    </div>
+    <div class="h-[6px] bg-white border-t-2 border-black">
+      <div id="progress-bar" class="h-full bg-primary w-0 transition-all duration-150"></div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header bg-[#E5E7EB]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="inline-block brutalist-border bg-white px-4 py-2 mb-6 font-mono-tech font-bold uppercase text-xs tracking-tighter brutalist-shadow-sm relative">
+        <span class="terminal-dot"></span> Research Archive Online
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black tracking-tighter uppercase italic">Research & <span class="text-primary">Publications</span></h1>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section class="py-20 bg-white border-b-4 border-black">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-14">
+        <h2 class="text-primary font-black uppercase text-xl mb-3 italic font-mono-tech">// RESEARCH_LOG</h2>
+        <h3 class="text-5xl md:text-6xl font-black uppercase tracking-tighter">Published Work</h3>
+      </div>
+
+      <div class="space-y-8">
+        <!-- Publication 1 -->
+        <article class="brutalist-border bg-[#E5E7EB] p-6 md:p-8 relative hover-brutalist transition-all">
+          <div class="sticker-badge">PAPER</div>
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
+            <h4 class="text-2xl font-black uppercase italic leading-tight">Comparative Analysis of ML Models for Customer Churn Prediction</h4>
+            <span class="font-mono-tech text-[10px] bg-black text-white px-2 py-1 whitespace-nowrap">2025</span>
+          </div>
+          <p class="font-bold uppercase text-sm leading-relaxed mb-4 text-slate-700">
+            A systematic comparison of Logistic Regression, Random Forest, and Gradient Boosting for predicting customer churn in telecom datasets. Includes cross-validation, ROC analysis, and feature importance ranking.
+          </p>
+          <div class="brutalist-border-sm bg-white p-3 mb-5">
+            <p class="font-mono-tech text-[10px] uppercase opacity-60 mb-1">Abstract</p>
+            <p class="text-sm font-bold leading-relaxed">
+              This study evaluates three supervised learning approaches for binary churn classification. Results show Gradient Boosting achieves the highest AUC-ROC of 0.89, while feature analysis reveals contract type and tenure as the strongest predictors.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="chip">Classification</span><span class="chip">Sklearn</span><span class="chip">EDA</span>
+          </div>
+          <div class="flex gap-4">
+            <a href="#" class="font-mono-tech text-xs uppercase font-bold text-primary underline">Read Paper &rarr;</a>
+            <a href="#" class="font-mono-tech text-xs uppercase font-bold underline">View Code &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Publication 2 -->
+        <article class="brutalist-border bg-[#E5E7EB] p-6 md:p-8 relative hover-brutalist transition-all">
+          <div class="sticker-badge !bg-primary !text-white">STUDY</div>
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
+            <h4 class="text-2xl font-black uppercase italic leading-tight">Transfer Learning for Small-Scale Image Datasets</h4>
+            <span class="font-mono-tech text-[10px] bg-black text-white px-2 py-1 whitespace-nowrap">2025</span>
+          </div>
+          <p class="font-bold uppercase text-sm leading-relaxed mb-4 text-slate-700">
+            Exploring the effectiveness of pre-trained CNN architectures (VGG16, ResNet50) when fine-tuned on datasets with fewer than 1,000 images per class. Evaluates data augmentation strategies.
+          </p>
+          <div class="brutalist-border-sm bg-white p-3 mb-5">
+            <p class="font-mono-tech text-[10px] uppercase opacity-60 mb-1">Abstract</p>
+            <p class="text-sm font-bold leading-relaxed">
+              Transfer learning with frozen convolutional layers and trained dense heads achieves 91% accuracy on a custom 5-class dataset of 500 images. Aggressive augmentation improves generalization by 8 percentage points.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="chip">CNN</span><span class="chip">Transfer Learning</span><span class="chip">Keras</span>
+          </div>
+          <div class="flex gap-4">
+            <a href="#" class="font-mono-tech text-xs uppercase font-bold text-primary underline">Read Paper &rarr;</a>
+            <a href="#" class="font-mono-tech text-xs uppercase font-bold underline">View Code &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Publication 3 -->
+        <article class="brutalist-border bg-[#E5E7EB] p-6 md:p-8 relative hover-brutalist transition-all">
+          <div class="sticker-badge">REPORT</div>
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
+            <h4 class="text-2xl font-black uppercase italic leading-tight">Feature Selection Impact on Model Performance: An Empirical Study</h4>
+            <span class="font-mono-tech text-[10px] bg-black text-white px-2 py-1 whitespace-nowrap">2024</span>
+          </div>
+          <p class="font-bold uppercase text-sm leading-relaxed mb-4 text-slate-700">
+            Investigating how different feature selection methods (filter, wrapper, embedded) affect classification accuracy and training time across multiple benchmark datasets.
+          </p>
+          <div class="brutalist-border-sm bg-white p-3 mb-5">
+            <p class="font-mono-tech text-[10px] uppercase opacity-60 mb-1">Abstract</p>
+            <p class="text-sm font-bold leading-relaxed">
+              Embedded methods (L1 regularization, tree-based importance) provide the best trade-off between accuracy retention and dimensionality reduction, maintaining 97% of baseline accuracy while reducing features by 60%.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="chip">Feature Selection</span><span class="chip">Benchmarking</span><span class="chip">Python</span>
+          </div>
+          <div class="flex gap-4">
+            <a href="#" class="font-mono-tech text-xs uppercase font-bold text-primary underline">Read Paper &rarr;</a>
+            <a href="#" class="font-mono-tech text-xs uppercase font-bold underline">View Code &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Publication 4 -->
+        <article class="brutalist-border bg-[#E5E7EB] p-6 md:p-8 relative hover-brutalist transition-all">
+          <div class="sticker-badge !bg-primary !text-white">ANALYSIS</div>
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
+            <h4 class="text-2xl font-black uppercase italic leading-tight">Exploratory Data Analysis of Public Health Datasets</h4>
+            <span class="font-mono-tech text-[10px] bg-black text-white px-2 py-1 whitespace-nowrap">2024</span>
+          </div>
+          <p class="font-bold uppercase text-sm leading-relaxed mb-4 text-slate-700">
+            A comprehensive EDA of publicly available health datasets, uncovering patterns in disease prevalence, demographic correlations, and data quality challenges.
+          </p>
+          <div class="brutalist-border-sm bg-white p-3 mb-5">
+            <p class="font-mono-tech text-[10px] uppercase opacity-60 mb-1">Abstract</p>
+            <p class="text-sm font-bold leading-relaxed">
+              Analysis reveals significant correlations between socioeconomic indicators and health outcomes. Visualization techniques including heatmaps and pair plots effectively communicate complex multivariate relationships.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="chip">EDA</span><span class="chip">Visualization</span><span class="chip">Pandas</span>
+          </div>
+          <div class="flex gap-4">
+            <a href="#" class="font-mono-tech text-xs uppercase font-bold text-primary underline">Read Paper &rarr;</a>
+            <a href="#" class="font-mono-tech text-xs uppercase font-bold underline">View Code &rarr;</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-white pt-10 pb-10 relative overflow-hidden">
+    <div class="absolute top-0 right-0 p-8 font-mono-tech text-[110px] font-black opacity-[0.03] leading-none pointer-events-none select-none uppercase italic">
+      RYAN_NODE
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center gap-2 font-black text-2xl uppercase italic tracking-tighter">
+          <span class="material-icons-outlined text-3xl text-primary">terminal</span>
+          <span>RYAN_N</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="mailto:ryan.naidji@gmail.com" class="hover:text-primary transition-colors"><i class="fas fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/ryannaidji" target="_blank" class="hover:text-primary transition-colors"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/ryannaidji/" target="_blank" class="hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
+          <a href="https://discordapp.com/users/ryann_305" target="_blank" class="hover:text-primary transition-colors"><i class="fab fa-discord"></i></a>
+        </div>
+        <p class="font-mono-tech font-bold uppercase text-[10px] tracking-[0.25em] text-slate-500 text-center md:text-right">
+          &copy; 2025 Ryan N. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
