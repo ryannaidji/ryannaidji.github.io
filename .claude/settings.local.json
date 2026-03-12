@@ -1,7 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(gh api:*)",
+      "Bash(which gh.exe 2>/dev/null || where gh 2>/dev/null || echo \"not found\")",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:api.github.com)"
     ]
   }
 }
