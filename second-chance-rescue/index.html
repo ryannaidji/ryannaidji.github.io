@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adopt a Pet | Second Chance Rescue</title>
+<meta name="description" content="Meet the dogs and cats waiting for a home at Second Chance Rescue in Whitcomb.">
+<meta property="og:title" content="Adopt a Pet | Second Chance Rescue">
+<meta property="og:description" content="Dogs and cats waiting for a home in Whitcomb County. Meet Biscuit, our star of the moment.">
+<meta property="og:image" content="images/biscuit.jpg">
+<meta name="theme-color" content="#1F6F6B">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"AnimalShelter","name":"Second Chance Rescue",
+"address":{"@type":"PostalAddress","streetAddress":"2201 County Road 12","addressLocality":"Whitcomb"},
+"telephone":"(555) 010-2200","email":"adopt@secondchancerescue.example.org"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF7F2; --surface:#FFFFFF; --surface-2:#F2EDE4; --text:#1E2A32; --muted:#5B6770;
+  --line:#E3DCD0; --primary:#1F6F6B; --primary-ink:#FFFFFF; --primary-soft:#E2F0EE;
+  --accent:#E4A23C; --accent-soft:#FBEBD0; --warn:#9A4A1F; --warn-soft:#FBE6DA;
+  --good:#2D6A3E; --good-soft:#E1F1E4; --shadow:0 1px 2px rgba(30,42,50,.06),0 4px 16px rgba(30,42,50,.06);
+  --radius:14px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121A1F; --surface:#1A242B; --surface-2:#222E36; --text:#EAF0F2; --muted:#A3B0B7;
+  --line:#2E3B44; --primary:#4FB3AA; --primary-ink:#0E1A1C; --primary-soft:#1C3533;
+  --accent:#F0B65A; --accent-soft:#3A2E1A; --warn:#F2A47C; --warn-soft:#3A2419;
+  --good:#8ED19D; --good-soft:#1C3322; --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25);
+}}
+:root[data-theme="dark"]{
+  --bg:#121A1F; --surface:#1A242B; --surface-2:#222E36; --text:#EAF0F2; --muted:#A3B0B7;
+  --line:#2E3B44; --primary:#4FB3AA; --primary-ink:#0E1A1C; --primary-soft:#1C3533;
+  --accent:#F0B65A; --accent-soft:#3A2E1A; --warn:#F2A47C; --warn-soft:#3A2419;
+  --good:#8ED19D; --good-soft:#1C3322; --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 "Source Sans 3",system-ui,sans-serif}
+h1,h2,h3{font-family:Nunito,system-ui,sans-serif;line-height:1.2;margin:0}
+a{color:var(--primary)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 18px;border-radius:999px;
+  font-weight:700;text-decoration:none;border:2px solid var(--primary);cursor:pointer;font-size:15px;white-space:nowrap}
+.btn-primary{background:var(--primary);color:var(--primary-ink)}
+.btn-ghost{background:transparent;color:var(--primary)}
+.btn:hover{filter:brightness(1.08)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* top bar + header */
+.topbar{background:var(--primary);color:var(--primary-ink);font-size:14px}
+.topbar .wrap{display:flex;gap:18px;justify-content:space-between;flex-wrap:wrap;padding-top:6px;padding-bottom:6px}
+.topbar a{color:inherit;text-decoration:none;font-weight:600}
+header.site{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+header.site .wrap{display:flex;align-items:center;gap:24px;min-height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+.logo svg{flex:none}
+.logo b{font-family:Nunito;font-size:19px;font-weight:800;display:block;line-height:1.1}
+.logo small{color:var(--muted);font-size:12.5px}
+nav.main{margin-left:auto}
+nav.main ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+nav.main a{display:block;padding:8px 12px;border-radius:8px;text-decoration:none;color:var(--text);font-weight:600}
+nav.main a:hover{background:var(--surface-2)}
+nav.main a[aria-current="page"]{color:var(--primary);background:var(--primary-soft)}
+.menu-toggle{display:none;margin-left:auto;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;color:var(--text)}
+@media (max-width:960px){
+  .menu-toggle{display:block}
+  nav.main{position:absolute;left:0;right:0;top:100%;background:var(--surface);border-bottom:1px solid var(--line);display:none}
+  nav.main.open{display:block}
+  nav.main ul{flex-direction:column;padding:8px 16px 16px}
+  header.site .btn{display:none}
+}
+
+/* hero */
+.hero-band{background:var(--surface);border-bottom:1px solid var(--line);margin-bottom:40px}
+.hero{padding-top:44px;padding-bottom:36px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end}
+.hero .quick{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+@media (max-width:820px){.hero{grid-template-columns:1fr}}
+.eyebrow{display:block;font:700 12.5px "Source Sans 3";letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin-bottom:8px}
+.crumbs{font-size:14px;color:var(--muted);margin-bottom:10px}
+.crumbs a{color:var(--muted)}
+.hero h1{font-size:clamp(30px,5vw,44px);font-weight:800}
+.hero p{color:var(--muted);font-size:18px;max-width:640px;margin:10px 0 0}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(120px,1fr));gap:10px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 16px}
+.stat b{font-family:Nunito;font-size:22px;display:block}
+.stat span{color:var(--muted);font-size:14px}
+
+/* featured */
+.featured{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);background:var(--surface);border:1px solid var(--line);
+  border-radius:20px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:36px}
+.featured .ph{position:relative;min-height:320px;background:var(--surface-2)}
+.featured .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.featured .body{padding:28px 30px}
+.ribbon{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#2A1A05;font-weight:700;font-size:13px;
+  letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:6px}
+.featured h2{font-size:38px;margin:12px 0 2px}
+.featured .tag{color:var(--muted);font-weight:600;margin:0}
+.quote{border-left:3px solid var(--accent);padding:6px 0 6px 14px;margin:0 0 18px;font-style:italic}
+.quote cite{display:block;font-style:normal;font-size:13.5px;color:var(--muted);margin-top:2px}
+.featured .ph .star{position:absolute;left:14px;bottom:14px;background:rgba(20,30,36,.82);color:#fff;font-weight:700;font-size:13px;padding:5px 11px;border-radius:999px}
+.featured .lead{font-size:18px;margin:6px 0 16px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:0 0 18px;padding:0}
+.facts div{background:var(--surface-2);border-radius:10px;padding:8px 12px}
+.facts dt{font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.facts dd{margin:0;font-weight:700}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}
+.cols h3{font-size:15px;margin-bottom:6px}
+.cols ul{margin:0;padding-left:18px;color:var(--muted)}
+.cols li{margin:2px 0}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+@media (max-width:820px){.featured{grid-template-columns:1fr}.featured .ph{min-height:260px}.cols{grid-template-columns:1fr}}
+
+/* filters */
+.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:end;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius);padding:14px;margin-bottom:18px}
+.filters label{display:flex;flex-direction:column;font-size:13px;font-weight:600;color:var(--muted);gap:4px;flex:1 1 140px}
+.filters input,.filters select{font:inherit;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:9px 10px;min-width:0}
+.filters .search{flex:2 1 220px}
+.seg{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;flex:none}
+.seg button{font:inherit;font-weight:700;background:var(--bg);color:var(--text);border:0;padding:9px 14px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--primary);color:var(--primary-ink)}
+.result-line{display:flex;justify-content:space-between;align-items:center;margin:0 0 14px;color:var(--muted)}
+.result-line button{background:none;border:0;color:var(--primary);font:inherit;font-weight:700;cursor:pointer}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;
+  box-shadow:var(--shadow);transition:transform .15s}
+.card:hover{transform:translateY(-3px);box-shadow:0 2px 4px rgba(30,42,50,.08),0 12px 28px rgba(30,42,50,.12)}
+.card .ph{position:relative;aspect-ratio:4/3;display:grid;place-items:center;color:var(--muted)}
+.card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph .nophoto{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:13px;font-weight:600}
+.badge{position:absolute;top:10px;left:10px;background:var(--surface);color:var(--text);font-size:12.5px;font-weight:700;padding:3px 9px;border-radius:999px;box-shadow:var(--shadow)}
+.badge.foster{background:var(--accent-soft)}
+.days{position:absolute;top:10px;right:10px;background:rgba(20,30,36,.78);color:#fff;font-size:12.5px;font-weight:700;padding:3px 9px;border-radius:999px}
+.card .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:21px}
+.card.is-star{border:2px solid var(--accent)}
+.longstay{position:absolute;left:10px;bottom:10px;background:var(--accent);color:#2A1A05;font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px}
+.load-more{display:flex;flex-direction:column;align-items:center;gap:8px;margin:26px 0 8px;color:var(--muted);font-size:14px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--surface);padding:8px 12px;border-radius:8px;z-index:50}
+.skip:focus{left:8px}
+.meta{color:var(--muted);font-size:14.5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 4px}
+.chip{font-size:13px;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--surface-2)}
+.chip.good{background:var(--good-soft);color:var(--good)}
+.chip.warn{background:var(--warn-soft);color:var(--warn)}
+.chip.health{background:var(--primary-soft);color:var(--primary)}
+.card .foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:8px;border-top:1px solid var(--line)}
+.fee{font-weight:700}
+.fee small{display:block;font-weight:400;color:var(--muted);font-size:12.5px}
+.card .btn{padding:8px 14px;font-size:14px}
+.skeleton{height:380px;border-radius:var(--radius);background:linear-gradient(90deg,var(--surface-2),var(--surface),var(--surface-2));background-size:200% 100%;animation:sh 1.2s infinite}
+@keyframes sh{to{background-position:-200% 0}}
+#sentinel{height:1px}
+.empty{text-align:center;padding:40px;color:var(--muted)}
+
+/* info sections */
+section.block{padding:56px 0}
+section.alt{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.block h2{font-size:30px;margin-bottom:8px}
+.block .sub{color:var(--muted);margin:0 0 26px;max-width:640px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.steps li::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;
+  background:var(--primary);color:var(--primary-ink);font:800 16px Nunito;margin-bottom:10px}
+.steps h3{font-size:18px;margin-bottom:4px}
+.steps p{margin:0;color:var(--muted)}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.visit{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.visit h3{font-size:17px;margin-bottom:8px;display:flex;gap:8px;align-items:center}
+.visit p{margin:4px 0;color:var(--muted)}
+.visit a{font-weight:700;overflow-wrap:anywhere}
+.cta-band{background:var(--primary);color:var(--primary-ink);border-radius:20px;padding:28px;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-top:28px}
+.cta-band h3{font-size:24px}
+.cta-band .btn{background:var(--primary-ink);color:var(--primary);border-color:var(--primary-ink)}
+footer{background:#18252C;color:#C9D3D8;padding:40px 0 24px;font-size:15px}
+footer .cols4{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px}
+footer h4{color:#fff;font-family:Nunito;margin:0 0 8px}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin:4px 0}
+footer a{color:#C9D3D8;text-decoration:none}
+footer a:hover{color:#fff;text-decoration:underline}
+footer .legal{border-top:1px solid #2C3B44;margin-top:28px;padding-top:16px;font-size:13.5px;color:#93A2AA;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+</style>
+</head>
+<body>
+<a class="skip" href="#adopt">Skip to adoptable animals</a>
+
+<div class="topbar"><div class="wrap">
+  <span>2201 County Road 12, Whitcomb</span>
+  <span><a href="tel:+15550102200">(555) 010-2200</a> · <a href="mailto:adopt@secondchancerescue.example.org">adopt@secondchancerescue.example.org</a></span>
+</div></div>
+
+<header class="site"><div class="wrap">
+  <a class="logo" href="index.html" aria-label="Second Chance Rescue home">
+    <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="var(--primary)"/>
+      <path d="M20 29s-9-5.4-9-11.2A4.8 4.8 0 0 1 20 15a4.8 4.8 0 0 1 9 2.8C29 23.6 20 29 20 29z" fill="var(--primary-ink)"/></svg>
+    <span><b>Second Chance Rescue</b><small>Whitcomb County</small></span>
+  </a>
+  <button class="menu-toggle" aria-expanded="false" aria-controls="mainnav">Menu</button>
+  <nav class="main" id="mainnav" aria-label="Main">
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="index.html" aria-current="page">Adopt</a></li>
+      <li><a href="foster.html">Foster</a></li>
+      <li><a href="volunteer.html">Volunteer</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="about.html">About us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <a class="btn btn-primary" href="apply.html">Apply to adopt</a>
+</div></header>
+
+<main>
+  <div class="hero-band"><div class="wrap hero">
+    <div>
+      <div class="crumbs"><a href="home.html">Home</a> › Adopt</div>
+      <span class="eyebrow">Adopt a pet</span>
+      <h1>Find your new best friend</h1>
+      <p>Every animal below is waiting for a home, at our shelter or with a foster family. Meet them, ask us anything, and apply when you're ready.</p>
+      <div class="quick">
+        <a class="btn btn-primary" href="#adopt" data-jump="Dog">Browse dogs</a>
+        <a class="btn btn-ghost" href="#adopt" data-jump="Cat">Browse cats</a>
+      </div>
+    </div>
+    <div class="stats" id="stats"></div>
+  </div></div>
+
+  <div class="wrap" id="featured-slot"></div>
+
+  <div class="wrap" id="adopt">
+    <h2 class="sr">All adoptable animals</h2>
+    <form class="filters" id="filters" role="search" onsubmit="return false">
+      <div class="seg" role="group" aria-label="Species">
+        <button type="button" data-sp="all" aria-pressed="true">All</button>
+        <button type="button" data-sp="Dog" aria-pressed="false">Dogs</button>
+        <button type="button" data-sp="Cat" aria-pressed="false">Cats</button>
+      </div>
+      <label class="search">Search
+        <input type="search" id="q" placeholder="Name or breed" autocomplete="off"></label>
+      <label>Age
+        <select id="age"><option value="">Any age</option><option>Baby</option><option>Young</option><option>Adult</option><option>Senior</option></select></label>
+      <label>Size
+        <select id="size"><option value="">Any size</option><option>Small</option><option>Medium</option><option>Large</option><option>Extra large</option></select></label>
+      <label>Sex
+        <select id="sex"><option value="">Any</option><option>Male</option><option>Female</option></select></label>
+      <label>Sort by
+        <select id="sort"><option value="days">Waiting longest</option><option value="new">Newest arrivals</option><option value="name">Name (A–Z)</option><option value="young">Youngest first</option></select></label>
+    </form>
+    <div class="result-line"><span id="count" aria-live="polite"></span><button type="button" id="reset" hidden>Clear filters</button></div>
+    <div class="grid" id="grid"></div>
+    <div class="load-more"><span id="shown"></span>
+      <button type="button" class="btn btn-ghost" id="more" hidden>Show more animals</button></div>
+    <div id="sentinel"></div>
+  </div>
+
+  <section class="block alt" id="how">
+    <div class="wrap">
+      <span class="eyebrow">The process</span>
+      <h2>How adoption works</h2>
+      <p class="sub">Our counselors help you find the right match, for you and for them.</p>
+      <ol class="steps">
+        <li><h3>Browse</h3><p>Look through our dogs and cats and note the ones you'd like to meet.</p></li>
+        <li><h3>Get in touch</h3><p>Call or email our adoption team with questions, about cats, kids, other pets or anything else.</p></li>
+        <li><h3>Meet</h3><p>Visit in person. Many of our shy ones shine in the play yard, not the kennel.</p></li>
+        <li><h3>Apply &amp; go home</h3><p>Submit your application, finalize with a counselor and welcome your new family member.</p></li>
+      </ol>
+      <div class="cta-band">
+        <div><h3>Ready to give a second chance?</h3><p style="margin:4px 0 0">Our adoption counselors are happy to help you choose.</p></div>
+        <a class="btn" href="apply.html">Start your application</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="visit">
+    <div class="wrap">
+      <span class="eyebrow">Find us</span>
+      <h2>Visit Second Chance Rescue</h2>
+      <p class="sub">We're the Whitcomb County shelter for stray and surrendered dogs and cats.</p>
+      <div class="contact-grid">
+        <div class="visit"><h3>📍 Address</h3>
+          <p>2201 County Road 12<br>Whitcomb</p>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=2201+County+Road+12+Whitcomb" target="_blank" rel="noopener">Get directions</a></p></div>
+        <div class="visit"><h3>📞 Adoptions</h3>
+          <p><a href="tel:+15550102200">(555) 010-2200</a></p>
+          <p><a href="mailto:adopt@secondchancerescue.example.org">adopt@secondchancerescue.example.org</a></p>
+          <p>Please call ahead for visiting hours.</p></div>
+        <div class="visit"><h3>🔎 Lost or found a pet?</h3>
+          <p>Strays brought to us are held 5 business days under our Whitcomb County contract so owners can reclaim them.</p>
+          <p><a href="lost-found.html">Lost &amp; found pets</a></p></div>
+        <div class="visit"><h3>🏡 Foster or volunteer</h3>
+          <p>Fosters and volunteers help our animals get ready for home.</p>
+          <p><a href="foster.html">Become a foster</a> · <a href="volunteer.html">Volunteer</a></p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols4">
+      <div><h4>Second Chance Rescue</h4><p style="margin:0">2201 County Road 12<br>Whitcomb</p></div>
+      <div><h4>Contact</h4><ul>
+        <li><a href="tel:+15550102200">(555) 010-2200</a></li>
+        <li><a href="mailto:adopt@secondchancerescue.example.org">adopt@secondchancerescue.example.org</a></li>
+        <li><a href="contact.html">Contact page</a></li></ul></div>
+      <div><h4>Get involved</h4><ul>
+        <li><a href="index.html">Adopt</a></li><li><a href="foster.html">Foster</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li><li><a href="donate.html">Donate</a></li></ul></div>
+      <div><h4>About</h4><ul>
+        <li><a href="about.html">Our story</a></li><li><a href="lost-found.html">Lost &amp; found</a></li>
+        <li><a href="faq.html">Adoption FAQ</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Second Chance Rescue · Whitcomb County</span><span>Animal listings updated August 17, 2026</span></div>
+  </div>
+</footer>
+
+<script>
+const ANIMALS = [{"id": "ST-2026-0014", "name": "Biscuit", "species": "Dog", "breed": "Shepherd Mix", "sex": "Male", "age": 3, "ageLabel": "3 years", "ageGroup": "Adult", "size": "Large", "color": "Tan & Black", "fee": 150, "altered": true, "inFoster": false, "since": "Jan 15, 2026", "days": 214, "traits": [["Velcro dog one-on-one, leans on you", "good"], ["House trained", "good"], ["Shy at the kennel front; shines in the play yard", "info"], ["OK with some dogs, with slow introductions", "info"], ["Chicken-free diet", "info"], ["Cats & kids: please ask our team", "info"]], "photo": "images/biscuit.jpg", "headline": "Shy at the kennel door, a leaning, velcro sweetheart one-on-one.", "health": ["Neutered", "DHPP, rabies (1 yr) & Bordetella given Jan 2026; due Jan 2027", "Heartworm test negative", "Left ear infection treated, resolved Mar 2026"], "featured": true}, {"id": "ST-2025-0036", "name": "Willow", "species": "Dog", "breed": "Shepherd Mix", "sex": "Female", "age": 3, "ageLabel": "3 years", "ageGroup": "Adult", "size": "Medium", "color": "Brown", "fee": 250, "altered": true, "inFoster": false, "since": "Apr 2, 2025", "days": 502, "traits": [["Good with other dogs", "good"]]}, {"id": "ST-2025-0129", "name": "Willow", "species": "Dog", "breed": "Rottweiler Mix", "sex": "Female", "age": 0, "ageLabel": "Under 1 year", "ageGroup": "Baby", "size": "Medium", "color": "Black & Tan", "fee": 175, "altered": true, "inFoster": false, "since": "Jun 22, 2025", "days": 421, "traits": [["No cats (per previous owner)", "warn"]]}, {"id": "ST-2025-0161", "name": "Figaro", "species": "Cat", "breed": "Siamese Mix", "sex": "Female", "age": 7, "ageLabel": "7 years", "ageGroup": "Adult", "size": "Small", "color": "Calico", "fee": 125, "altered": true, "inFoster": false, "since": "Jul 13, 2025", "days": 400, "traits": [["May have a kennel buddy, ask us", "info"]]}, {"id": "ST-2025-0176", "name": "Ellie", "species": "Dog", "breed": "Golden Retriever Mix", "sex": "Female", "age": 5, "ageLabel": "5 years", "ageGroup": "Adult", "size": "Medium", "color": "Red", "fee": 225, "altered": true, "inFoster": false, "since": "Aug 2, 2025", "days": 380, "traits": [["Loves fetch", "good"], ["Sweet, but vocal in the kennel", "info"]]}, {"id": "ST-2025-0249", "name": "Dumpling", "species": "Cat", "breed": "Siamese Mix", "sex": "Male", "age": 4, "ageLabel": "4 years", "ageGroup": "Adult", "size": "Small", "color": "Buff", "fee": 125, "altered": true, "inFoster": false, "since": "Oct 21, 2025", "days": 300, "traits": [["Slow to warm up, worth the wait", "info"], ["Easygoing around people", "good"]]}, {"id": "ST-2025-0275", "name": "Ruby", "species": "Dog", "breed": "Border Collie Mix", "sex": "Male", "age": 5, "ageLabel": "5 years", "ageGroup": "Adult", "size": "Medium", "color": "Black & White", "fee": 200, "altered": true, "inFoster": false, "since": "Nov 22, 2025", "days": 268, "traits": [["Picky eater the first week", "info"]]}, {"id": "ST-2025-0292", "name": "Koda", "species": "Dog", "breed": "Husky Mix", "sex": "Female", "age": 0, "ageLabel": "Under 1 year", "ageGroup": "Baby", "size": "Medium", "color": "Black & White", "fee": 150, "altered": true, "inFoster": false, "since": "Dec 19, 2025", "days": 241, "traits": [["Good with other dogs", "good"], ["Picky eater the first week", "info"]]}, {"id": "ST-2026-0008", "name": "Salem", "species": "Cat", "breed": "Russian Blue Mix", "sex": "Male", "age": 1, "ageLabel": "1 year", "ageGroup": "Young", "size": "Medium", "color": "Brown tabby", "fee": 90, "altered": true, "inFoster": true, "since": "Jan 9, 2026", "days": 220, "traits": [["Easygoing around people", "good"], ["Chirps at birds", "info"]]}, {"id": "ST-2026-0019", "name": "Nutmeg", "species": "Cat", "breed": "Domestic Shorthair", "sex": "Female", "age": 1, "ageLabel": "1 year", "ageGroup": "Young", "size": "Small", "color": "White", "fee": 90, "altered": true, "inFoster": false, "since": "Jan 19, 2026", "days": 210, "traits": [["May have a kennel buddy, ask us", "info"], ["Had a cold on arrival, recovered", "health"]]}, {"id": "ST-2026-0022", "name": "Quill", "species": "Cat", "breed": "Tortoiseshell Domestic Shorthair", "sex": "Male", "age": 5, "ageLabel": "5 years", "ageGroup": "Adult", "size": "Small", "color": "Black & White", "fee": 125, "altered": true, "inFoster": true, "since": "Jan 24, 2026", "days": 205, "traits": [["Loves wand toys", "good"]]}, {"id": "ST-2026-0031", "name": "Tilly", "species": "Dog", "breed": "Poodle Mix", "sex": "Male", "age": 0, "ageLabel": "Under 1 year", "ageGroup": "Baby", "size": "Small", "color": "Black", "fee": 175, "altered": true, "inFoster": true, "since": "Feb 8, 2026", "days": 190, "traits": [["Excited at the gate, good on leash", "info"], ["A big baby at the vet", "info"]]}, {"id": "ST-2026-0037", "name": "Iggy", "species": "Dog", "breed": "Poodle Mix", "sex": "Female", "age": 1, "ageLabel": "1 year", "ageGroup": "Young", "size": "Small", "color": "Tan", "fee": 150, "altered": true, "inFoster": false, "since": "Feb 11, 2026", "days": 187, "traits": [["No cats (per previous owner)", "warn"]]}, {"id": "ST-2026-0047", "name": "Patches", "species": "Cat", "breed": "Domestic Shorthair", "sex": "Female", "age": 10, "ageLabel": "10 years", "ageGroup": "Senior", "size": "Medium", "color": "White", "fee": 60, "altered": false, "inFoster": true, "since": "Feb 23, 2026", "days": 175, "traits": [["Slow to warm up, worth the wait", "info"], ["Easygoing around people", "good"]]}, {"id": "ST-2026-0055", "name": "Max", "species": "Dog", "breed": "Mountain Cur Mix", "sex": "Male", "age": 2, "ageLabel": "2 years", "ageGroup": "Young", "size": "Medium", "color": "Tan", "fee": 225, "altered": true, "inFoster": false, "since": "Mar 7, 2026", "days": 163, "traits": [["Loves fetch", "good"], ["Sweet, but vocal in the kennel", "info"]]}, {"id": "ST-2026-0060", "name": "Stella", "species": "Dog", "breed": "Border Collie Mix", "sex": "Male", "age": 2, "ageLabel": "2 years", "ageGroup": "Young", "size": "Large", "color": "Brindle", "fee": 250, "altered": true, "inFoster": true, "since": "Mar 10, 2026", "days": 160, "traits": [["Good with other dogs", "good"]]}, {"id": "ST-2026-0069", "name": "Wanda", "species": "Cat", "breed": "Bombay Mix", "sex": "Female", "age": 3, "ageLabel": "3 years", "ageGroup": "Adult", "size": "Small", "color": "Orange tabby", "fee": 110, "altered": true, "inFoster": false, "since": "Mar 20, 2026", "days": 150, "traits": [["Good eater, uses the litter box", "good"]]}, {"id": "ST-2026-0071", "name": "Echo", "species": "Cat", "breed": "Bombay Mix", "sex": "Female", "age": 8, "ageLabel": "8 years", "ageGroup": "Senior", "size": "Medium", "color": "Gray tabby", "fee": 60, "altered": true, "inFoster": true, "since": "Mar 23, 2026", "days": 147, "traits": [["Slow to warm up, worth the wait", "info"]]}, {"id": "ST-2026-0074", "name": "Samson", "species": "Dog", "breed": "Heeler Mix", "sex": "Female", "age": 4, "ageLabel": "4 years", "ageGroup": "Adult", "size": "Medium", "color": "Red & White", "fee": 150, "altered": true, "inFoster": false, "since": "Mar 24, 2026", "days": 146, "traits": [["Good with other dogs", "good"], ["No cats (per previous owner)", "warn"]]}, {"id": "ST-2026-0087", "name": "Smokey", "species": "Cat", "breed": "Domestic Shorthair", "sex": "Female", "age": 4, "ageLabel": "4 years", "ageGroup": "Adult", "size": "Medium", "color": "Seal point", "fee": 125, "altered": true, "inFoster": true, "since": "Apr 6, 2026", "days": 133, "traits": [["Slow to warm up, worth the wait", "info"], ["Good eater, uses the litter box", "good"]]}, {"id": "ST-2026-0095", "name": "Buster", "species": "Dog", "breed": "Lab Mix", "sex": "Female", "age": 4, "ageLabel": "4 years", "ageGroup": "Adult", "size": "Large", "color": "Black", "fee": 150, "altered": true, "inFoster": false, "since": "Apr 11, 2026", "days": 128, "traits": [["Excited at the gate, good on leash", "info"], ["A big baby at the vet", "info"]]}, {"id": "ST-2026-0101", "name": "Noodle", "species": "Cat", "breed": "Maine Coon Mix", "sex": "Female", "age": 1, "ageLabel": "1 year", "ageGroup": "Young", "size": "Small", "color": "Brown tabby", "fee": 110, "altered": true, "inFoster": true, "since": "Apr 19, 2026", "days": 120, "traits": [["May have a kennel buddy, ask us", "info"], ["Chirps at birds", "info"]]}, {"id": "ST-2026-0102", "name": "Yuki", "species": "Cat", "breed": "Maine Coon Mix", "sex": "Female", "age": 1, "ageLabel": "1 year", "ageGroup": "Young", "size": "Small", "color": "Tortie", "fee": 110, "altered": true, "inFoster": false, "since": "Apr 19, 2026", "days": 120, "traits": [["Did great at an adoption event", "good"]]}, {"id": "ST-2026-0112", "name": "Ginger", "species": "Dog", "breed": "Lab Mix", "sex": "Female", "age": 12, "ageLabel": "12 years", "ageGroup": "Senior", "size": "Large", "color": "Black", "fee": 95, "altered": true, "inFoster": false, "since": "Apr 26, 2026", "days": 113, "traits": [["Picky eater the first week", "info"]]}, {"id": "ST-2026-0117", "name": "Ranger", "species": "Dog", "breed": "Great Pyrenees Mix", "sex": "Female", "age": 1, "ageLabel": "1 year", "ageGroup": "Young", "size": "Small", "color": "Merle", "fee": 250, "altered": true, "inFoster": true, "since": "Apr 29, 2026", "days": 110, "traits": [["Doesn't like thunderstorms", "info"]]}, {"id": "ST-2026-0125", "name": "Daisy", "species": "Dog", "breed": "Mountain Cur Mix", "sex": "Female", "age": 1, "ageLabel": "1 year", "ageGroup": "Young", "size": "Medium", "color": "Red", "fee": 150, "altered": false, "inFoster": false, "since": "May 8, 2026", "days": 101, "traits": [["Excited at the gate, good on leash", "info"]]}, {"id": "ST-2026-0129", "name": "Onyx", "species": "Cat", "breed": "Siamese Mix", "sex": "Male", "age": 4, "ageLabel": "4 years", "ageGroup": "Adult", "size": "Small", "color": "Seal point", "fee": 125, "altered": true, "inFoster": false, "since": "May 10, 2026", "days": 99, "traits": [["May have a kennel buddy, ask us", "info"]]}, {"id": "ST-2026-0130", "name": "Josie", "species": "Dog", "breed": "Beagle", "sex": "Female", "age": 5, "ageLabel": "5 years", "ageGroup": "Adult", "size": "Small", "color": "Tricolor", "fee": 175, "altered": true, "inFoster": true, "since": "May 11, 2026", "days": 98, "traits": [["Needs slow intros with new dogs", "warn"]]}, {"id": "ST-2026-0142", "name": "Iggy", "species": "Dog", "breed": "Golden Retriever Mix", "sex": "Male", "age": 0, "ageLabel": "Under 1 year", "ageGroup": "Baby", "size": "Small", "color": "Tricolor", "fee": 225, "altered": true, "inFoster": false, "since": "May 17, 2026", "days": 92, "traits": [["Good with other dogs", "good"]]}, {"id": "ST-2026-0145", "name": "Hazel", "species": "Dog", "breed": "Boxer Mix", "sex": "Female", "age": 1, "ageLabel": "1 year", "ageGroup": "Young", "size": "Large", "color": "White", "fee": 150, "altered": true, "inFoster": true, "since": "May 19, 2026", "days": 90, "traits": [["Loves fetch", "good"], ["Picky eater the first week", "info"]]}, {"id": "ST-2026-0154", "name": "Clover", "species": "Cat", "breed": "Domestic Mediumhair", "sex": "Female", "age": 7, "ageLabel": "7 years", "ageGroup": "Adult", "size": "Small", "color": "Gray", "fee": 110, "altered": true, "inFoster": false, "since": "May 24, 2026", "days": 85, "traits": [["Had a cold on arrival, recovered", "health"]]}, {"id": "ST-2026-0156", "name": "Pearl", "species": "Dog", "breed": "Australian Shepherd Mix", "sex": "Male", "age": 3, "ageLabel": "3 years", "ageGroup": "Adult", "size": "Small", "color": "Merle", "fee": 250, "altered": true, "inFoster": false, "since": "May 24, 2026", "days": 85, "traits": [["Can be reactive on leash; experienced handler", "warn"]]}, {"id": "ST-2026-0158", "name": "Winnie", "species": "Dog", "breed": "Boxer Mix", "sex": "Male", "age": 7, "ageLabel": "7 years", "ageGroup": "Adult", "size": "Large", "color": "Gray", "fee": 225, "altered": true, "inFoster": true, "since": "May 27, 2026", "days": 82, "traits": [["Needs slow intros with new dogs", "warn"]]}, {"id": "ST-2026-0160", "name": "Roxy", "species": "Dog", "breed": "Golden Retriever Mix", "sex": "Male", "age": 3, "ageLabel": "3 years", "ageGroup": "Adult", "size": "Medium", "color": "White", "fee": null, "altered": true, "inFoster": false, "since": "May 30, 2026", "days": 79, "traits": [["Good with other dogs", "good"]]}, {"id": "ST-2026-0166", "name": "Cleo", "species": "Cat", "breed": "Domestic Longhair", "sex": "Female", "age": 1, "ageLabel": "1 year", "ageGroup": "Young", "size": "Medium", "color": "White", "fee": 90, "altered": true, "inFoster": true, "since": "Jun 3, 2026", "days": 75, "traits": [["May have a kennel buddy, ask us", "info"], ["Slow to warm up, worth the wait", "info"]]}, {"id": "ST-2026-0168", "name": "Bruno", "species": "Dog", "breed": "Boxer Mix", "sex": "Female", "age": 2, "ageLabel": "2 years", "ageGroup": "Young", "size": "Large", "color": "Fawn", "fee": 200, "altered": true, "inFoster": false, "since": "Jun 5, 2026", "days": 73, "traits": [["Can be reactive on leash; experienced handler", "warn"]]}, {"id": "ST-2026-0174", "name": "Queenie", "species": "Cat", "breed": "Tortoiseshell Domestic Shorthair", "sex": "Male", "age": 1, "ageLabel": "1 year", "ageGroup": "Young", "size": "Medium", "color": "Gray tabby", "fee": 90, "altered": true, "inFoster": false, "since": "Jun 8, 2026", "days": 70, "traits": [["Prefers a home without dogs", "warn"], ["May have a kennel buddy, ask us", "info"]]}, {"id": "ST-2026-0176", "name": "Mittens", "species": "Cat", "breed": "Tabby Domestic Shorthair", "sex": "Male", "age": 1, "ageLabel": "1 year", "ageGroup": "Young", "size": "Medium", "color": "Gray tabby", "fee": 90, "altered": true, "inFoster": true, "since": "Jun 10, 2026", "days": 68, "traits": [["Prefers a home without dogs", "warn"], ["Loves wand toys", "good"]]}, {"id": "ST-2026-0178", "name": "Peanut", "species": "Dog", "breed": "Dachshund Mix", "sex": "Female", "age": 1, "ageLabel": "1 year", "ageGroup": "Young", "size": "Medium", "color": "Black & Tan", "fee": 150, "altered": true, "inFoster": false, "since": "Jun 10, 2026", "days": 68, "traits": [["Can be reactive on leash; experienced handler", "warn"]]}, {"id": "ST-2026-0182", "name": "Tucker", "species": "Dog", "breed": "Great Pyrenees Mix", "sex": "Male", "age": 7, "ageLabel": "7 years", "ageGroup": "Adult", "size": "Large", "color": "Tan & Black", "fee": 200, "altered": true, "inFoster": false, "since": "Jun 14, 2026", "days": 64, "traits": [["Knows sit, down & shake", "good"]]}, {"id": "ST-2026-0185", "name": "Ursula", "species": "Cat", "breed": "Domestic Mediumhair", "sex": "Female", "age": 2, "ageLabel": "2 years", "ageGroup": "Young", "size": "Small", "color": "Tortie", "fee": 125, "altered": true, "inFoster": false, "since": "Jun 16, 2026", "days": 62, "traits": [["Had a cold on arrival, recovered", "health"]]}, {"id": "ST-2026-0188", "name": "Nala", "species": "Dog", "breed": "Beagle", "sex": "Male", "age": 2, "ageLabel": "2 years", "ageGroup": "Young", "size": "Medium", "color": "Red & White", "fee": 200, "altered": true, "inFoster": false, "since": "Jun 17, 2026", "days": 61, "traits": [["Crate trained", "good"]]}, {"id": "ST-2026-0190", "name": "Rex", "species": "Dog", "breed": "Poodle Mix", "sex": "Female", "age": 12, "ageLabel": "12 years", "ageGroup": "Senior", "size": "Large", "color": "Yellow", "fee": 95, "altered": true, "inFoster": true, "since": "Jun 18, 2026", "days": 60, "traits": [["A big baby at the vet", "info"]]}, {"id": "ST-2026-0192", "name": "Iggy", "species": "Dog", "breed": "Pit Bull Terrier Mix", "sex": "Female", "age": 3, "ageLabel": "3 years", "ageGroup": "Adult", "size": "Medium", "color": "Red", "fee": 150, "altered": true, "inFoster": false, "since": "Jun 19, 2026", "days": 59, "traits": [["Sweet, but vocal in the kennel", "info"], ["Crate trained", "good"]]}, {"id": "ST-2026-0197", "name": "Remi", "species": "Dog", "breed": "Catahoula Mix", "sex": "Male", "age": 2, "ageLabel": "2 years", "ageGroup": "Young", "size": "Medium", "color": "Tricolor", "fee": 200, "altered": true, "inFoster": false, "since": "Jun 22, 2026", "days": 56, "traits": [["Doesn't like thunderstorms", "info"]]}, {"id": "ST-2026-0198", "name": "Goldie", "species": "Cat", "breed": "Domestic Shorthair", "sex": "Female", "age": 0, "ageLabel": "Under 1 year", "ageGroup": "Baby", "size": "Small", "color": "Orange tabby", "fee": 90, "altered": true, "inFoster": false, "since": "Jun 23, 2026", "days": 55, "traits": [["May have a kennel buddy, ask us", "info"]]}, {"id": "ST-2026-0199", "name": "Gracie", "species": "Dog", "breed": "Dachshund Mix", "sex": "Female", "age": 1, "ageLabel": "1 year", "ageGroup": "Young", "size": "Extra large", "color": "Brown", "fee": 250, "altered": false, "inFoster": true, "since": "Jun 23, 2026", "days": 55, "traits": [["No cats (per previous owner)", "warn"]]}, {"id": "ST-2026-0207", "name": "Trixie", "species": "Dog", "breed": "Great Pyrenees Mix", "sex": "Male", "age": 4, "ageLabel": "4 years", "ageGroup": "Adult", "size": "Extra large", "color": "White", "fee": 250, "altered": true, "inFoster": false, "since": "Jun 26, 2026", "days": 52, "traits": [["No cats (per previous owner)", "warn"], ["Had kennel cough on arrival, recovered", "health"]]}, {"id": "ST-2026-0211", "name": "Winnie", "species": "Dog", "breed": "Lab Mix", "sex": "Male", "age": 2, "ageLabel": "2 years", "ageGroup": "Young", "size": "Large", "color": "Yellow", "fee": 250, "altered": true, "inFoster": false, "since": "Jun 29, 2026", "days": 49, "traits": [["Excited at the gate, good on leash", "info"], ["Sits for treats", "good"]]}, {"id": "ST-2026-0213", "name": "Felix", "species": "Cat", "breed": "Domestic Shorthair", "sex": "Male", "age": 7, "ageLabel": "7 years", "ageGroup": "Adult", "size": "Medium", "color": "Buff", "fee": 110, "altered": true, "inFoster": false, "since": "Jun 30, 2026", "days": 48, "traits": [["May have a kennel buddy, ask us", "info"]]}, {"id": "ST-2026-0214", "name": "Ruby", "species": "Dog", "breed": "Beagle", "sex": "Female", "age": 2, "ageLabel": "2 years", "ageGroup": "Young", "size": "Extra large", "color": "Gray", "fee": 200, "altered": false, "inFoster": true, "since": "Jun 30, 2026", "days": 48, "traits": [["Needs slow intros with new dogs", "warn"], ["Knows sit, down & shake", "good"]]}, {"id": "ST-2026-0215", "name": "Murphy", "species": "Dog", "breed": "Lab Mix", "sex": "Female", "age": 6, "ageLabel": "6 years", "ageGroup": "Adult", "size": "Large", "color": "Yellow", "fee": 225, "altered": true, "inFoster": false, "since": "Jul 3, 2026", "days": 45, "traits": [["Needs slow intros with new dogs", "warn"], ["Sweet, but vocal in the kennel", "info"]]}, {"id": "ST-2026-0216", "name": "Figaro", "species": "Cat", "breed": "Domestic Mediumhair", "sex": "Female", "age": 1, "ageLabel": "1 year", "ageGroup": "Young", "size": "Small", "color": "Calico", "fee": 125, "altered": true, "inFoster": false, "since": "Jul 4, 2026", "days": 44, "traits": [["May have a kennel buddy, ask us", "info"], ["Did great at an adoption event", "good"]]}, {"id": "ST-2026-0217", "name": "Maggie", "species": "Dog", "breed": "Terrier Mix", "sex": "Female", "age": 4, "ageLabel": "4 years", "ageGroup": "Adult", "size": "Small", "color": "Tan", "fee": 225, "altered": true, "inFoster": false, "since": "Jul 7, 2026", "days": 41, "traits": [["Doesn't like thunderstorms", "info"]]}, {"id": "ST-2026-0219", "name": "Trixie", "species": "Dog", "breed": "Rottweiler Mix", "sex": "Female", "age": 10, "ageLabel": "10 years", "ageGroup": "Senior", "size": "Large", "color": "Brown", "fee": 95, "altered": true, "inFoster": true, "since": "Jul 7, 2026", "days": 41, "traits": [["Had kennel cough on arrival, recovered", "health"]]}, {"id": "ST-2026-0221", "name": "Smokey", "species": "Cat", "breed": "Domestic Longhair", "sex": "Male", "age": 3, "ageLabel": "3 years", "ageGroup": "Adult", "size": "Medium", "color": "Brown tabby", "fee": 90, "altered": true, "inFoster": false, "since": "Jul 8, 2026", "days": 40, "traits": [["May have a kennel buddy, ask us", "info"], ["Front declawed (arrived that way)", "health"]]}, {"id": "ST-2026-0225", "name": "Pearl", "species": "Dog", "breed": "Shepherd Mix", "sex": "Male", "age": 2, "ageLabel": "2 years", "ageGroup": "Young", "size": "Large", "color": "Tricolor", "fee": 175, "altered": true, "inFoster": false, "since": "Jul 10, 2026", "days": 38, "traits": [["Can be reactive on leash; experienced handler", "warn"], ["Crate trained", "good"]]}, {"id": "ST-2026-0226", "name": "Noodle", "species": "Cat", "breed": "Tortoiseshell Domestic Shorthair", "sex": "Female", "age": 4, "ageLabel": "4 years", "ageGroup": "Adult", "size": "Small", "color": "Black", "fee": 125, "altered": true, "inFoster": false, "since": "Jul 12, 2026", "days": 36, "traits": [["Chirps at birds", "info"], ["Front declawed (arrived that way)", "health"]]}, {"id": "ST-2026-0227", "name": "Kettle", "species": "Cat", "breed": "Domestic Mediumhair", "sex": "Female", "age": 5, "ageLabel": "5 years", "ageGroup": "Adult", "size": "Small", "color": "Orange tabby", "fee": 110, "altered": true, "inFoster": true, "since": "Jul 13, 2026", "days": 35, "traits": [["Chirps at birds", "info"]]}, {"id": "ST-2026-0228", "name": "Charlie", "species": "Dog", "breed": "Chihuahua Mix", "sex": "Female", "age": 2, "ageLabel": "2 years", "ageGroup": "Young", "size": "Small", "color": "Tan", "fee": 175, "altered": true, "inFoster": false, "since": "Jul 14, 2026", "days": 34, "traits": [["Good with other dogs", "good"], ["Can be reactive on leash; experienced handler", "warn"]]}, {"id": "ST-2026-0231", "name": "Mochi", "species": "Cat", "breed": "Domestic Mediumhair", "sex": "Male", "age": 0, "ageLabel": "Under 1 year", "ageGroup": "Baby", "size": "Small", "color": "Gray tabby", "fee": 125, "altered": true, "inFoster": false, "since": "Jul 15, 2026", "days": 33, "traits": [["Did great at an adoption event", "good"]]}, {"id": "ST-2026-0233", "name": "Shadow", "species": "Dog", "breed": "Shepherd Mix", "sex": "Male", "age": 4, "ageLabel": "4 years", "ageGroup": "Adult", "size": "Medium", "color": "Gray", "fee": 200, "altered": true, "inFoster": false, "since": "Jul 17, 2026", "days": 31, "traits": [["Excited at the gate, good on leash", "info"]]}, {"id": "ST-2026-0236", "name": "Salem", "species": "Cat", "breed": "Domestic Shorthair", "sex": "Male", "age": 2, "ageLabel": "2 years", "ageGroup": "Young", "size": "Small", "color": "Gray tabby", "fee": 90, "altered": true, "inFoster": false, "since": "Jul 18, 2026", "days": 30, "traits": [["Prefers quiet spaces", "info"]]}, {"id": "ST-2026-0238", "name": "Xena", "species": "Cat", "breed": "Siamese Mix", "sex": "Male", "age": 1, "ageLabel": "1 year", "ageGroup": "Young", "size": "Small", "color": "Calico", "fee": 90, "altered": true, "inFoster": true, "since": "Jul 18, 2026", "days": 30, "traits": [["Easygoing around people", "good"], ["Prefers quiet spaces", "info"]]}, {"id": "ST-2026-0241", "name": "Daisy", "species": "Dog", "breed": "Australian Shepherd Mix", "sex": "Female", "age": 2, "ageLabel": "2 years", "ageGroup": "Young", "size": "Large", "color": "Tricolor", "fee": 225, "altered": true, "inFoster": false, "since": "Jul 20, 2026", "days": 28, "traits": [["Crate trained", "good"], ["Walks nicely on leash", "good"]]}, {"id": "ST-2026-0246", "name": "Figaro", "species": "Cat", "breed": "Tortoiseshell Domestic Shorthair", "sex": "Female", "age": 6, "ageLabel": "6 years", "ageGroup": "Adult", "size": "Small", "color": "Calico", "fee": null, "altered": false, "inFoster": false, "since": "Jul 21, 2026", "days": 27, "traits": [["May have a kennel buddy, ask us", "info"], ["Chirps at birds", "info"]]}, {"id": "ST-2026-0251", "name": "Opal", "species": "Cat", "breed": "Maine Coon Mix", "sex": "Male", "age": 0, "ageLabel": "Under 1 year", "ageGroup": "Baby", "size": "Medium", "color": "Brown tabby", "fee": 110, "altered": true, "inFoster": false, "since": "Jul 23, 2026", "days": 25, "traits": [["May have a kennel buddy, ask us", "info"]]}, {"id": "ST-2026-0252", "name": "Sasha", "species": "Dog", "breed": "Lab Mix", "sex": "Female", "age": 2, "ageLabel": "2 years", "ageGroup": "Young", "size": "Large", "color": "Yellow", "fee": 175, "altered": true, "inFoster": false, "since": "Jul 23, 2026", "days": 25, "traits": [["Excited at the gate, good on leash", "info"], ["Shy for a few days, then settles in", "info"]]}, {"id": "ST-2026-0260", "name": "Iggy", "species": "Dog", "breed": "Border Collie Mix", "sex": "Female", "age": 1, "ageLabel": "1 year", "ageGroup": "Young", "size": "Medium", "color": "Red & White", "fee": 150, "altered": true, "inFoster": false, "since": "Jul 26, 2026", "days": 22, "traits": [["Good with other dogs", "good"], ["Crate trained", "good"]]}, {"id": "ST-2026-0261", "name": "Salem", "species": "Cat", "breed": "Maine Coon Mix", "sex": "Male", "age": 6, "ageLabel": "6 years", "ageGroup": "Adult", "size": "Medium", "color": "Buff", "fee": 90, "altered": false, "inFoster": true, "since": "Jul 26, 2026", "days": 22, "traits": [["Had a cold on arrival, recovered", "health"], ["Front declawed (arrived that way)", "health"]]}, {"id": "ST-2026-0263", "name": "Biscotti", "species": "Cat", "breed": "Domestic Longhair", "sex": "Female", "age": 3, "ageLabel": "3 years", "ageGroup": "Adult", "size": "Small", "color": "Black & White", "fee": 125, "altered": true, "inFoster": false, "since": "Jul 27, 2026", "days": 21, "traits": [["Slow to warm up, worth the wait", "info"], ["Loves wand toys", "good"]]}, {"id": "ST-2026-0268", "name": "Winnie", "species": "Dog", "breed": "Shepherd Mix", "sex": "Female", "age": 1, "ageLabel": "1 year", "ageGroup": "Young", "size": "Large", "color": "Tan & Black", "fee": 225, "altered": true, "inFoster": false, "since": "Jul 29, 2026", "days": 19, "traits": [["Knows sit, down & shake", "good"]]}, {"id": "ST-2026-0269", "name": "Toast", "species": "Cat", "breed": "Russian Blue Mix", "sex": "Female", "age": 3, "ageLabel": "3 years", "ageGroup": "Adult", "size": "Small", "color": "Black & White", "fee": 90, "altered": true, "inFoster": false, "since": "Jul 30, 2026", "days": 18, "traits": [["Easygoing around people", "good"], ["Loves wand toys", "good"]]}, {"id": "ST-2026-0270", "name": "Tank", "species": "Dog", "breed": "Border Collie Mix", "sex": "Female", "age": 1, "ageLabel": "1 year", "ageGroup": "Young", "size": "Small", "color": "Black & White", "fee": 250, "altered": true, "inFoster": false, "since": "Jul 31, 2026", "days": 17, "traits": [["Loves fetch", "good"], ["Had kennel cough on arrival, recovered", "health"]]}, {"id": "ST-2026-0273", "name": "Copper", "species": "Dog", "breed": "Heeler Mix", "sex": "Female", "age": 2, "ageLabel": "2 years", "ageGroup": "Young", "size": "Medium", "color": "Yellow", "fee": 200, "altered": true, "inFoster": true, "since": "Aug 2, 2026", "days": 15, "traits": [["Crate trained", "good"]]}, {"id": "ST-2026-0274", "name": "Loaf", "species": "Cat", "breed": "Tortoiseshell Domestic Shorthair", "sex": "Male", "age": 6, "ageLabel": "6 years", "ageGroup": "Adult", "size": "Small", "color": "Brown tabby", "fee": 110, "altered": true, "inFoster": false, "since": "Aug 2, 2026", "days": 15, "traits": [["Did great at an adoption event", "good"]]}, {"id": "ST-2026-0277", "name": "Opie", "species": "Dog", "breed": "Pit Bull Terrier Mix", "sex": "Male", "age": 4, "ageLabel": "4 years", "ageGroup": "Adult", "size": "Large", "color": "White", "fee": 200, "altered": true, "inFoster": false, "since": "Aug 3, 2026", "days": 14, "traits": [["Good with other dogs", "good"], ["Crate trained", "good"]]}, {"id": "ST-2026-0279", "name": "Marbles", "species": "Cat", "breed": "Russian Blue Mix", "sex": "Female", "age": 2, "ageLabel": "2 years", "ageGroup": "Young", "size": "Medium", "color": "Calico", "fee": 125, "altered": true, "inFoster": false, "since": "Aug 5, 2026", "days": 12, "traits": [["Did great at an adoption event", "good"], ["Prefers quiet spaces", "info"]]}, {"id": "ST-2026-0280", "name": "Gracie", "species": "Dog", "breed": "Corgi Mix", "sex": "Male", "age": 3, "ageLabel": "3 years", "ageGroup": "Adult", "size": "Small", "color": "Red", "fee": 175, "altered": true, "inFoster": false, "since": "Aug 6, 2026", "days": 11, "traits": [["A big baby at the vet", "info"]]}, {"id": "ST-2026-0283", "name": "Pumpkin", "species": "Cat", "breed": "Domestic Shorthair", "sex": "Male", "age": 1, "ageLabel": "1 year", "ageGroup": "Young", "size": "Medium", "color": "Black & White", "fee": 110, "altered": true, "inFoster": false, "since": "Aug 7, 2026", "days": 10, "traits": [["Prefers quiet spaces", "info"]]}, {"id": "ST-2026-0285", "name": "Ace", "species": "Dog", "breed": "Great Pyrenees Mix", "sex": "Female", "age": 3, "ageLabel": "3 years", "ageGroup": "Adult", "size": "Medium", "color": "White", "fee": 250, "altered": true, "inFoster": false, "since": "Aug 8, 2026", "days": 9, "traits": [["Loves fetch", "good"], ["Sits for treats", "good"]]}, {"id": "ST-2026-0289", "name": "Mochi", "species": "Cat", "breed": "Siamese Mix", "sex": "Male", "age": 1, "ageLabel": "1 year", "ageGroup": "Young", "size": "Small", "color": "Black & White", "fee": 125, "altered": true, "inFoster": false, "since": "Aug 9, 2026", "days": 8, "traits": [["Loves wand toys", "good"]]}, {"id": "ST-2026-0292", "name": "Rosie", "species": "Dog", "breed": "Lab Mix", "sex": "Male", "age": 4, "ageLabel": "4 years", "ageGroup": "Adult", "size": "Large", "color": "Brown", "fee": 150, "altered": true, "inFoster": false, "since": "Aug 11, 2026", "days": 6, "traits": [["Picky eater the first week", "info"], ["Crate trained", "good"]]}, {"id": "ST-2026-0294", "name": "Smokey", "species": "Cat", "breed": "Bombay Mix", "sex": "Female", "age": 10, "ageLabel": "10 years", "ageGroup": "Senior", "size": "Small", "color": "Gray", "fee": 60, "altered": true, "inFoster": false, "since": "Aug 12, 2026", "days": 5, "traits": [["Slow to warm up, worth the wait", "info"]]}, {"id": "ST-2026-0297", "name": "Waylon", "species": "Dog", "breed": "Golden Retriever Mix", "sex": "Male", "age": 4, "ageLabel": "4 years", "ageGroup": "Adult", "size": "Medium", "color": "Yellow", "fee": 225, "altered": true, "inFoster": false, "since": "Aug 13, 2026", "days": 4, "traits": [["Loves fetch", "good"]]}, {"id": "ST-2026-0298", "name": "Ash", "species": "Cat", "breed": "Tabby Domestic Shorthair", "sex": "Male", "age": 2, "ageLabel": "2 years", "ageGroup": "Young", "size": "Small", "color": "Seal point", "fee": 90, "altered": true, "inFoster": false, "since": "Aug 14, 2026", "days": 3, "traits": [["May have a kennel buddy, ask us", "info"], ["Slow to warm up, worth the wait", "info"]]}];
+const BATCH = 12;
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+const ICON = {
+  Dog: '<svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true" fill="currentColor"><path d="M14 18c-4 2-7 10-5 16 1 3 4 3 6 0l3-6v14c0 9 6 14 14 14s14-5 14-14V28l3 6c2 3 5 3 6 0 2-6-1-14-5-16-4-2-9-1-12 2h-12c-3-3-8-4-12-2zm11 18a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm14 0a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm-7 10c-3 0-5-2-5-3.5S29 41 32 41s5 .5 5 1.5S35 46 32 46z" opacity=".55"/></svg>',
+  Cat: '<svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true" fill="currentColor"><path d="M12 10l10 12h20l10-12 2 22c0 14-10 22-22 22S10 46 10 32zm13 26a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm14 0a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm-7 8l-3-3h6z" opacity=".55"/></svg>'
+};
+const TINTS = ["#E7EFEA","#F3E7DA","#E5ECF3","#F1E5EA","#ECE9DF","#E3EEF0"];
+
+function photo(a, eager) {
+  if (a.photo) return `<img src="${esc(a.photo)}" alt="${esc(a.name)}, ${esc(a.breed)}" loading="${eager ? "eager" : "lazy"}" decoding="async">`;
+  return `<div class="nophoto">${ICON[a.species]}<span>Photo coming soon</span></div>`;
+}
+const tint = a => TINTS[parseInt(a.id.slice(-3), 10) % TINTS.length];
+const feeHTML = a => a.fee ? `$${a.fee}<small>Adoption fee</small>` : `Ask us<small>Adoption fee</small>`;
+const waitLabel = d => d >= 60 ? `${Math.round(d / 30)} months waiting` : `${d} days waiting`;
+
+function card(a) {
+  const chips = a.traits.slice(0, 3).map(([t, k]) => `<span class="chip ${k}">${esc(t)}</span>`).join("");
+  const more = a.traits.length > 3 ? `<span class="chip">+${a.traits.length - 3} more</span>` : "";
+  return `<article class="card${a.featured ? " is-star" : ""}" aria-labelledby="n-${a.id}">
+    <div class="ph" style="background:${tint(a)}">${photo(a)}
+      <span class="badge ${a.inFoster ? "foster" : ""}">${a.inFoster ? "In a foster home" : "At the shelter"}</span>
+      <span class="days">${waitLabel(a.days)}</span>
+      ${a.featured ? '<span class="longstay">★ Star of the moment</span>' : a.days >= 180 ? '<span class="longstay">Long-time resident</span>' : ""}</div>
+    <div class="body">
+      <h3 id="n-${a.id}">${esc(a.name)}</h3>
+      <div class="meta">${a.species} · ${esc(a.breed)}<br>${a.sex} · ${a.ageLabel} · ${a.size}</div>
+      <div class="chips">${chips}${more}</div>
+      <div class="foot"><span class="fee">${feeHTML(a)}</span>
+        <a class="btn btn-primary" href="animal.html?id=${a.id}">Meet ${esc(a.name)}</a></div>
+    </div></article>`;
+}
+
+function featured(a) {
+  if (!a) return "";
+  const li = arr => arr.map(x => `<li>${esc(Array.isArray(x) ? x[0] : x)}</li>`).join("");
+  return `<article class="featured" aria-labelledby="feat-name">
+    <div class="ph">${photo(a, true)}<span class="star">★ Star of the moment</span></div>
+    <div class="body">
+      <span class="ribbon">★ Our star of the moment</span>
+      <h2 id="feat-name">Meet ${esc(a.name)}</h2>
+      <p class="tag">Waiting for a home for ${a.days} days</p>
+      <p class="lead">${esc(a.headline)}</p>
+      <blockquote class="quote">“Total sweetheart in the yard. Don't judge him at the front!”<cite>From our animal care team</cite></blockquote>
+      <dl class="facts">
+        <div><dt>Breed</dt><dd>${esc(a.breed)}</dd></div>
+        <div><dt>Age</dt><dd>About ${a.ageLabel}</dd></div>
+        <div><dt>Sex · Size</dt><dd>${a.sex} · ${a.size}</dd></div>
+        <div><dt>Coat</dt><dd>${esc(a.color)}</dd></div>
+        <div><dt>With us since</dt><dd>${a.since}</dd></div>
+        <div><dt>Adoption fee</dt><dd>${a.fee ? "$" + a.fee : "Ask us"}</dd></div>
+      </dl>
+      <div class="cols">
+        <div><h3>Personality</h3><ul>${li(a.traits)}</ul></div>
+        <div><h3>Health</h3><ul>${li(a.health)}</ul></div>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="apply.html?id=${a.id}">Apply to adopt ${esc(a.name)}</a>
+        <a class="btn btn-ghost" href="animal.html?id=${a.id}">Full profile</a>
+        <a class="btn btn-ghost" href="tel:+15550102200">Call (555) 010-2200</a>
+      </div>
+    </div></article>`;
+}
+
+// ---- state, filtering, lazy batches
+const state = { sp: "all", q: "", age: "", size: "", sex: "", sort: "days" };
+let list = [], shown = 0;
+
+function apply() {
+  const q = state.q.trim().toLowerCase();
+  list = ANIMALS.filter(a =>
+    (state.sp === "all" || a.species === state.sp) &&
+    (!q || a.name.toLowerCase().includes(q) || a.breed.toLowerCase().includes(q)) &&
+    (!state.age || a.ageGroup === state.age) &&
+    (!state.size || a.size === state.size) &&
+    (!state.sex || a.sex === state.sex));
+  const by = {
+    days: (a, b) => b.days - a.days,
+    new: (a, b) => a.days - b.days,
+    name: (a, b) => a.name.localeCompare(b.name),
+    young: (a, b) => a.age - b.age,
+  }[state.sort];
+  list.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0) || by(a, b));   // Biscuit stays first
+  shown = 0;
+  $("#grid").innerHTML = "";
+  const filtered = state.sp !== "all" || q || state.age || state.size || state.sex;
+  $("#reset").hidden = !filtered;
+  $("#count").textContent = `${list.length} ${list.length === 1 ? "animal" : "animals"} available`;
+  $("#shown").textContent = ""; $("#more").hidden = true;
+  if (!list.length) $("#grid").innerHTML = `<p class="empty">No match yet. Try fewer filters, or <a href="mailto:adopt@secondchancerescue.example.org">tell us what you're looking for</a>.</p>`;
+  more();
+}
+
+function more() {
+  if (shown >= list.length) return;
+  $("#grid").insertAdjacentHTML("beforeend", list.slice(shown, shown + BATCH).map(card).join(""));
+  shown = Math.min(shown + BATCH, list.length);
+  $("#shown").textContent = list.length ? `Showing ${shown} of ${list.length}` : "";
+  $("#more").hidden = shown >= list.length;
+}
+$("#more").addEventListener("click", more);
+document.querySelectorAll("[data-jump]").forEach(a => a.addEventListener("click", () =>
+  document.querySelector(`.seg button[data-sp="${a.dataset.jump}"]`).click()));
+
+new IntersectionObserver(es => { if (es[0].isIntersecting) more(); }, { rootMargin: "600px" }).observe($("#sentinel"));
+
+document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  state.sp = b.dataset.sp; apply();
+}));
+["q", "age", "size", "sex", "sort"].forEach(id => $("#" + id).addEventListener("input", e => { state[id] = e.target.value; apply(); }));
+$("#reset").addEventListener("click", () => {
+  Object.assign(state, { sp: "all", q: "", age: "", size: "", sex: "" });
+  ["q", "age", "size", "sex"].forEach(id => $("#" + id).value = "");
+  document.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", x.dataset.sp === "all"));
+  apply();
+});
+$(".menu-toggle").addEventListener("click", e => {
+  const open = $("#mainnav").classList.toggle("open");
+  e.currentTarget.setAttribute("aria-expanded", open);
+});
+
+// ---- init
+const dogs = ANIMALS.filter(a => a.species === "Dog").length;
+$("#stats").innerHTML = [[ANIMALS.length, "animals waiting"], [dogs, "dogs"], [ANIMALS.length - dogs, "cats"],
+  [ANIMALS.filter(a => a.inFoster).length, "in foster homes"]].map(([n, l]) => `<div class="stat"><b>${n}</b><span>${l}</span></div>`).join("");
+$("#featured-slot").innerHTML = featured(ANIMALS.find(a => a.featured));
+apply();
+</script>
+</body>
+</html>
