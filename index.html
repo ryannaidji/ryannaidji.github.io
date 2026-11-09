@@ -5,84 +5,144 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ryan Naidji</title>
   <meta name="description" content="Ryan Naidji builds AI systems and measures whether they work. Applied AI student in Miami, FL.">
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
-  <main>
-    <header class="intro">
-      <img src="img/ryan-naidji.jpeg" alt="Portrait of Ryan Naidji" width="160" height="200">
-      <div>
-        <h1>Ryan Naidji</h1>
-        <p class="lead">I build AI systems and measure whether they actually work.</p>
-        <p class="muted">B.S. Applied AI student · Miami, FL · Open to junior AI roles</p>
-        <nav aria-label="Links">
-          <a href="mailto:ryan.naidji@gmail.com">Email</a>
-          <a href="https://github.com/ryannaidji">GitHub</a>
-          <a href="https://www.linkedin.com/in/ryannaidji">LinkedIn</a>
-        </nav>
+  <header class="topbar">
+    <a class="brand" href="#top">Ryan Naidji</a>
+    <nav aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#background">Background</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Applied AI · Miami, FL</p>
+        <h1>I build AI systems and measure whether they actually work.</h1>
+        <p class="lead">I'm finishing a B.S. in Applied Artificial Intelligence and looking for a junior AI role. My projects focus on agents, evaluation and model serving.</p>
+        <div class="actions">
+          <a class="button" href="mailto:ryan.naidji@gmail.com">Get in touch</a>
+          <a class="button ghost" href="https://github.com/ryannaidji">GitHub</a>
+          <a class="button ghost" href="https://www.linkedin.com/in/ryannaidji">LinkedIn</a>
+        </div>
       </div>
-    </header>
-
-    <section>
-      <h2>Projects</h2>
-      <article>
-        <h3><a href="https://github.com/ryannaidji/memorybench">MemoryBench</a></h3>
-        <p>A customer-memory service for support conversations, with an evaluation harness and a CI gate that fails the build when quality drops. Error analysis and a prompt redesign raised extraction F1 from 0.41 to 0.70 on a synthetic test set.</p>
-        <p class="tags">Python · FastAPI · Ollama · LoRA · Kafka API · PostgreSQL</p>
-      </article>
-      <article>
-        <h3><a href="https://github.com/ryannaidji/support-agent-mcp">Support Agent MCP</a></h3>
-        <p>A customer-support agent with tools exposed over MCP, server-side authorization and human approval for risky actions. The approval gate blocked all 15 prompt-injection attacks in a 60-task evaluation.</p>
-        <p class="tags">Python · LangGraph · MCP · RAG · Agent evaluation</p>
-      </article>
-      <article>
-        <h3><a href="https://github.com/ryannaidji/mri-platform">MRI Platform</a></h3>
-        <p>A brain-tumor MRI classifier from data cleaning to serving: Spark deduplication to prevent leakage, 97.77% test accuracy, and an ONNX model that halved inference time (77 ms to 39 ms).</p>
-        <p class="tags">PyTorch · PySpark · ONNX · FastAPI · Kubernetes (local)</p>
-      </article>
-      <article>
-        <h3><a href="https://github.com/ryannaidji/ai-ops-automation">AI Ops Automation</a></h3>
-        <p>A support-ticket triage service with signed webhooks and personal-data redaction. Prompt work raised urgency accuracy from 0.30 to 0.825 on synthetic tickets.</p>
-        <p class="tags">Python · LlamaIndex · FastAPI · n8n · TypeScript</p>
-      </article>
-      <article>
-        <h3><a href="https://github.com/ryannaidji/DiscAgent">DiscAgent</a></h3>
-        <p>A Discord agent that turns natural language into multi-step actions across 51 tools, running on a local LLM, with admin-only gating and confirmation before destructive actions.</p>
-        <p class="tags">Python · Ollama · Tool calling · asyncio</p>
-      </article>
-      <article>
-        <h3><a href="https://github.com/ryannaidji/AI_MDC_Hackathon_2024">Drone control with object detection</a></h3>
-        <p>Best Overall Project at the MDC AI Hackathon 2024. A three-person team built a working drone interface with real-time detection in under 48 hours.</p>
-        <p class="tags">Python · YOLO · Gradio</p>
-      </article>
-      <p class="more"><a href="https://github.com/ryannaidji?tab=repositories">All projects on GitHub</a></p>
+      <img class="portrait" src="img/ryan-naidji.jpeg" alt="Portrait of Ryan Naidji" width="800" height="1000">
     </section>
 
-    <section>
-      <h2>Experience</h2>
-      <dl>
-        <dt>Sep 2026 – present</dt>
-        <dd><strong>AI Strategy Consultant</strong>, TriMerge Consulting Group, Miami</dd>
-        <dt>Jun – Aug 2025</dt>
-        <dd><strong>Machine Learning Specialist</strong>, Distribution Stox, Montréal</dd>
-      </dl>
+    <section id="work">
+      <div class="section-head">
+        <h2>Selected work</h2>
+        <a href="https://github.com/ryannaidji?tab=repositories">All projects on GitHub</a>
+      </div>
+      <div class="projects">
+        <article class="project">
+          <p class="stat">0.41 → 0.70</p>
+          <p class="stat-label">extraction F1, synthetic test set</p>
+          <h3><a href="https://github.com/ryannaidji/memorybench">MemoryBench</a></h3>
+          <p>A customer-memory service for support conversations, with an evaluation harness and a CI gate that fails the build when quality drops.</p>
+          <p class="tags">Python · FastAPI · Ollama · LoRA · PostgreSQL</p>
+        </article>
+        <article class="project">
+          <p class="stat">15 / 15</p>
+          <p class="stat-label">prompt injections blocked by the approval gate</p>
+          <h3><a href="https://github.com/ryannaidji/support-agent-mcp">Support Agent MCP</a></h3>
+          <p>A customer-support agent with tools exposed over MCP, server-side authorization and human approval for risky actions.</p>
+          <p class="tags">Python · LangGraph · MCP · RAG</p>
+        </article>
+        <article class="project">
+          <p class="stat">97.77%</p>
+          <p class="stat-label">test accuracy on brain-tumor MRI scans</p>
+          <h3><a href="https://github.com/ryannaidji/mri-platform">MRI Platform</a></h3>
+          <p>A classifier from data cleaning to serving, with Spark deduplication to prevent leakage and an ONNX model that halved inference time.</p>
+          <p class="tags">PyTorch · PySpark · ONNX · Kubernetes (local)</p>
+        </article>
+        <article class="project">
+          <p class="stat">0.30 → 0.825</p>
+          <p class="stat-label">urgency accuracy, synthetic tickets</p>
+          <h3><a href="https://github.com/ryannaidji/ai-ops-automation">AI Ops Automation</a></h3>
+          <p>A support-ticket triage service with signed webhooks, retrieval over a knowledge base and personal-data redaction.</p>
+          <p class="tags">Python · LlamaIndex · FastAPI · TypeScript</p>
+        </article>
+        <article class="project">
+          <p class="stat">51 tools</p>
+          <p class="stat-label">chained from natural language on a local LLM</p>
+          <h3><a href="https://github.com/ryannaidji/DiscAgent">DiscAgent</a></h3>
+          <p>A Discord agent that turns requests into multi-step actions, with admin-only gating and confirmation before destructive ones.</p>
+          <p class="tags">Python · Ollama · Tool calling · asyncio</p>
+        </article>
+        <article class="project">
+          <p class="stat">Best Overall</p>
+          <p class="stat-label">MDC AI Hackathon 2024, three-person team</p>
+          <h3><a href="https://github.com/ryannaidji/AI_MDC_Hackathon_2024">Drone control with object detection</a></h3>
+          <p>A working drone interface with a live camera feed and real-time detection, built in under 48 hours.</p>
+          <p class="tags">Python · YOLO · Gradio</p>
+        </article>
+      </div>
     </section>
 
-    <section>
-      <h2>Education</h2>
-      <dl>
-        <dt>Expected Mar 2027</dt>
-        <dd><strong>B.S. Applied Artificial Intelligence</strong>, Miami Dade College</dd>
-        <dt>2024 – 2025</dt>
-        <dd><strong>A.S. Artificial Intelligence</strong>, Miami Dade College</dd>
-        <dt>2023 – 2025</dt>
-        <dd><strong>Technical Specialization in AI</strong>, Collège de Bois-de-Boulogne, Montréal</dd>
-      </dl>
+    <section id="background" class="background">
+      <div>
+        <h2>Experience</h2>
+        <ol class="timeline">
+          <li>
+            <h3>AI Strategy Consultant</h3>
+            <p>TriMerge Consulting Group, Miami</p>
+            <p class="when">Sep 2026 – present</p>
+          </li>
+          <li>
+            <h3>Machine Learning Specialist</h3>
+            <p>Distribution Stox, Montréal</p>
+            <p class="when">Jun – Aug 2025</p>
+          </li>
+        </ol>
+      </div>
+      <div>
+        <h2>Education</h2>
+        <ol class="timeline">
+          <li>
+            <h3>B.S. Applied Artificial Intelligence</h3>
+            <p>Miami Dade College</p>
+            <p class="when">Expected Mar 2027</p>
+          </li>
+          <li>
+            <h3>A.S. Artificial Intelligence</h3>
+            <p>Miami Dade College</p>
+            <p class="when">2024 – 2025</p>
+          </li>
+          <li>
+            <h3>Technical Specialization in AI</h3>
+            <p>Collège de Bois-de-Boulogne, Montréal</p>
+            <p class="when">2023 – 2025</p>
+          </li>
+        </ol>
+      </div>
+      <div>
+        <h2>Tools</h2>
+        <dl class="tools">
+          <dt>LLMs and agents</dt>
+          <dd>LangGraph, MCP, RAG, Ollama, LoRA</dd>
+          <dt>Machine learning</dt>
+          <dd>PyTorch, TensorFlow, ONNX, PySpark</dd>
+          <dt>Backend</dt>
+          <dd>Python, FastAPI, PostgreSQL, TypeScript</dd>
+          <dt>Operations</dt>
+          <dd>Docker, GitHub Actions, MLflow</dd>
+          <dt>Languages</dt>
+          <dd>English, French</dd>
+        </dl>
+      </div>
     </section>
 
-    <footer>
-      <p class="muted">Fluent in English and French</p>
-    </footer>
+    <section id="contact" class="contact">
+      <h2>Let's talk.</h2>
+      <a class="email" href="mailto:ryan.naidji@gmail.com">ryan.naidji@gmail.com</a>
+    </section>
   </main>
 </body>
 </html>
