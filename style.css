@@ -134,13 +134,10 @@ h2 { font: 400 2rem/1.2 var(--serif); letter-spacing: -0.01em; }
 
 .project:hover { border-color: var(--accent); transform: translateY(-2px); }
 
-.stat { color: var(--accent); font: 400 1.9rem/1.15 var(--serif); }
-.stat-label { min-height: 2.8em; margin-top: 6px; color: var(--muted); font-size: 0.85rem; line-height: 1.4; }
-
-.project h3 { margin-top: 18px; font-size: 1.05rem; font-weight: 600; line-height: 1.35; }
+.project h3 { font-size: 1.05rem; font-weight: 600; line-height: 1.35; }
 .project h3 a { text-decoration: none; }
 .project h3 a::after { content: ""; position: absolute; inset: 0; border-radius: 12px; }
-.project > p:not(.stat, .stat-label, .tags) { margin-top: 8px; font-size: 0.95rem; }
+.project > p:not(.tags) { margin-top: 8px; font-size: 0.95rem; }
 .tags { margin-top: auto; padding-top: 18px; color: var(--muted); font-size: 0.8rem; }
 
 .background {
@@ -186,7 +183,6 @@ dd { margin-bottom: 14px; font-size: 0.95rem; }
   .hero { grid-template-columns: 1fr; gap: 32px; padding: 20px 0 56px; }
   .portrait { order: -1; width: 180px; }
   .projects, .background { grid-template-columns: 1fr; }
-  .stat-label { min-height: 0; }
   .background { gap: 32px; }
   .tools { columns: 1; }
 }
